@@ -96,6 +96,9 @@ li a {
     padding: 2%;
     width: 50%;
 }
+.lg-div{
+    width: 99.99%;
+}
 .md-div h1{
     font-size: 2em;
     text-align: center;
@@ -140,6 +143,11 @@ li a {
     justify-content: center;
 }
 
+.flex-center-row{
+    display: flex;
+    justify-content: center;
+}
+
 .round-div-1{
     background-image: url("../img/undraw_message_sent_1030.svg");
     background-size: 100% 100%;
@@ -160,5 +168,19 @@ li a {
 }
 
 .footer{
-    border: 2px solid black;
+    border: 1px solid #05668D;
+    padding-top: 5% !important;
+    border-bottom-right-radius: 100px;
+}
+.social-links{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+.social-links span a i {
+    font-size: 40px;
+    color: #05668D;
+}
+.bg-LIMERICK{
+    background-color: #A5BE00;
 }
