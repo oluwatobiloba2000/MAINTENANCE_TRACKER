@@ -2,7 +2,10 @@ html {
     padding: 0;
     margin: 0;
     background-color: #EBF2FA;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
+    height: 100%; /* Used to enable scrolling */
+    background: linear-gradient(55deg, #0fb8ad70 0%, #1fc8dbab 51%, #2cb6e8d7 85%);
+    /**/
 }
 
 
@@ -12,6 +15,7 @@ body {
 }
 
 * {
+    scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
@@ -194,8 +198,6 @@ li a {
 
 .footer {
     border: 1px solid #05668D;
-    padding-top: 5% !important;
-    border-bottom-right-radius: 100px;
 }
 
 .social-links {
@@ -217,11 +219,16 @@ li a {
     display: none;
 }
 
+.link-style-none {
+    color: #000;
+}
+
 /* RESPONSIVE*/
 @media all and (max-width : 900px) {
     .right_nav {
-        width: 0;
         display: none;
+        transition: 600ms ease-in;
+        width: 0;
         float: none;
         margin-right: 0% !important;
     }
@@ -263,8 +270,8 @@ li a {
     }
 
     .open-nav {
-        transition: 600ms ease-in;
         display: block;
+        transition: 600ms ease-in;
         width: 100%;
     }
 }
