@@ -30,9 +30,9 @@
 
                     <!-- LEFT NAV ENDS -->
                     <!-- NAV RIGHT STARTS -->
-                    <li class="right_nav nav-border bg-blue">
-                        <a href="UI/HTML/SignUp.html">Register</a>
-                    </li>
+                    <!-- <li class="right_nav nav-border bg-blue">
+                        <a href="../HTML/signup.html">Register</a>
+                    </li> -->
                 </ul>
                 <!-- </div> -->
                 <!-- NAV RIGHT ENDS -->
@@ -41,40 +41,47 @@
     </header>
     <main>
         <section class="pt">
-            <div class="container">
-                <div class="md-div">
-                    <div class="md-div-form">
-                        <form action="./HTML/admin/admin.html" method="GET" autocomplete="on">
-                            <!-- <p id="incorrect"><i class="fas fa-exclamation">&nbsp;Incorrect username or password</i></p> -->
-                            <h2>Sign in</h2>
-                            <label for="username">
-                                <i class="far fa-user"></i> Username :<br>
-                                <input id="username" type="text" placeholder="username" required>
-                            </label>
-                            <br>
-                            <!-- javascript validation  for username begins-->
-                            <!-- <span id="validating_username">Username cannot be empty</span> -->
-                            <!-- javascript validation for username ends -->
-                            <br>
-                            <label for="password">
-                                <i class="fas fa-lock"></i> Password :<br>
-                                <input type="password" id="password" placeholder="password" required>
-                                <span id="show_password"><i class="fas fa-eye"></i></span>
-                            </label>
-                            <br>
-                            <!-- javascript validation  for password begins-->
-                            <!-- <span id="validating_password">Password cannot be empty</span> -->
-                            <!-- javascript validation for password ends -->
-                            <p><a id="forgot_password" href="#">forgot password ?</a></p>
-                            <button class="btn-primary" id="sign_in_button">Sign in</button>
-                    </div>
+            <!-- <div class="container"> -->
+            <div class="md-div">
+                <div class="md-div-form">
+                    <form action="./admin/admin-index.html" method="GET" autocomplete="on">
+                        <!-- <p id="incorrect"><i class="fas fa-exclamation">&nbsp;Incorrect username or password</i></p> -->
+                        <h2>Sign in</h2>
+                        <label for="username">
+                            <i class="far fa-user"></i> Username :<br>
+                            <input id="username" type="text" placeholder="username" required>
+                        </label>
+                        <br>
+                        <!-- javascript validation  for username begins-->
+                        <!-- <span id="validating_username">Username cannot be empty</span> -->
+                        <!-- javascript validation for username ends -->
+                        <br>
+                        <label for="password">
+                            <i class="fas fa-lock"></i> Password :<br>
+                            <input type="password" id="password" placeholder="password" required>
+                            <span id="show_password"><i class="fas fa-eye"></i></span>
+                        </label>
+                        <br>
+                        <!-- javascript validation  for password begins-->
+                        <!-- <span id="validating_password">Password cannot be empty</span> -->
+                        <!-- javascript validation for password ends -->
+                        <p><a id="forgot_password" href="#" class="link-style-none">forgot password ?</a></p>
+                        <button class="btn-primary" id="sign_in_button">Sign in</button>
+
+                        <p>Dont have an account with <span class="primary-text">Tracky</span> ? <a
+                                class="link-style-none" href="./signup.html">Sign up</a></p>
+                    </form>
                 </div>
-                <!-- <div class="md-div svg-div-signin">
-                     <img src="../img/rubens-nguyen-489224-unsplash.jpg" alt=""> 
-                </div> -->
+            </div>
+
+            <!-- </div> -->
+            <div class="md-div svg-div-signin">
+                <img src="../img/rubens-nguyen-489224-unsplash.jpg" alt="">
             </div>
         </section>
+
     </main>
+    <script src="../UI ELEMENTS/sign-in.js"></script>
 </body>
 
 </html>
