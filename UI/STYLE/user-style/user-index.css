@@ -231,7 +231,7 @@ body {
 }
 
 /* error modal starts */
-.errormodal{
+.errormodal {
     color: #EBF2FA;
     opacity: 0;
     position: fixed;
@@ -241,24 +241,29 @@ body {
     width: 100%;
     transform: translateY(-57px);
     background-color: #e25c3d;
+    /* background: -webkit-linear-gradient(-180deg, rgb(251, 176, 30), rgb(229, 2, 18), rgb(192, 6, 156)) */
 }
-.errormodal p{
+
+.errormodal p {
     text-align: center;
     margin: 0;
 }
-.errormodal span{
+
+.errormodal span {
     cursor: pointer;
     font-weight: bolder;
     float: right;
 }
 
-.error-transition{
+.error-transition {
     transition: all .6s ease;
 }
-.error-modal-open{
+
+.error-modal-open {
     transform: translateY(0);
     opacity: 1;
 }
+
 /* error modal ends */
 
 @media all and (max-width:900px) {

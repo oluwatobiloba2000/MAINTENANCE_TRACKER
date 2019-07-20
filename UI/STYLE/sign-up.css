@@ -38,3 +38,9 @@ input:hover{
 .md-div-form {
     text-align: left;
 }
+
+@media all and (max-width:900px){
+    .md-div p{
+        text-align: center;
+    }
+}
