@@ -1,0 +1,40 @@
+.md-div img{
+    width: 50px;
+}
+
+.md-div-img img{
+    width: 100%;
+}
+
+.my-name-brand{
+    color: rgba(128, 128, 128, 0.644);
+}
+
+.md-div{
+    margin: 1%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+.pt{
+    padding-top: 1%;
+}
+.text-right{
+    text-align: right;
+}
+label,button{
+    margin-top: 20px;
+}
+input{
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid #05668d;
+    outline: #05668D;
+}
+input:hover{
+    color: #05668D;
+}
+.md-div-form {
+    text-align: left;
+}
