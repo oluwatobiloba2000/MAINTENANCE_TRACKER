@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../../img/technical-support-2_icon-icons.com_52811.ico">
+    <link rel="stylesheet" href="../../STYLE/user-style/user-index.css">
+    <title>Approved request | Tracky</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar-mobile">
+            <div>
+                <i id="bars-icon" class="fa fa-bars"></i>
+            </div>
+            <div class="nav-bar-username-mobile">
+                <i class="far fa-user"></i><span class="username-update">Tobbyloba2000</span>
+            </div>
+        </div>
+        <hr class="divider-mobile">
+        <nav class="navbar navbar-fixed close-nav-mobile">
+            <a class="navbar-logo" href="../../../index.html">
+                <img title="HOME" src="https://dashkit.goodthemes.co/assets/img/logo.svg" alt="Logo">
+            </a>
+            <ul class="navbar-sublist">
+                <li class="navbar-list">
+                    <a href="../user/user-index.html"><i class="fas fa-home"></i> All requests</a>
+                    <hr class="divider">
+                </li>
+                <li title="Current page" class="navbar-list">
+                    <a class="active" href="../user/user-approved-request.html"><i class="fas fa-check-double"></i>
+                        Aproved requests</a>
+                    <hr class="divider">
+                </li>
+                <li class="navbar-list">
+                    <a href="../user/user-pending-request.html"><i class="far fa-clock"></i> Pending requests</a>
+                    <hr class="divider">
+                </li>
+                <!-- <li class="navbar-list">
+                    <a id="request-btn" href="javascript:void(0)"><i class="far fa-clipboard"></i> Create a new request</a>
+                    <hr class="divider">
+                </li> -->
+            </ul>
+            <ul class="navbar-sublist">
+                <li class="navbar-list hover-red">
+                    <a href="../../../index.html"><i class="fas fa-door-open"></i> Log out</a>
+                </li>
+                <br>
+                <div class="container-user-name">
+                    <li class="navbar-list">
+                        <i class="far fa-user"></i> Logged in as <span class="username-update">User</span>
+                    </li>
+                </div>
+
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="header">
+                <div class="container">
+                    <div class="container-body">
+                        <h1>Dashboard</h1>
+                        <p>Approved request</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+
+
+            </div>
+        </div>
+        </div>
+        <!-- The create a request Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content starts -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <!-- POP UP FORM STARTS-->
+                <div class="pop-up-form">
+                    <form id="form">
+                        <!--method="GET" action="/UI/UI Elements/HTML/user.html" -->
+                        <h2>Make a request</h2>
+                        <label for="title">Title
+                            <br>
+                            <input id="title" name="title" placeholder="Request title" type="text" required>
+                        </label>
+                        <br>
+                        <p>Request category
+                            <br>
+                            <select name="category" id="post_category">
+                                <option disabled>Please choose a category</option>
+                                <option value="Mainteinance">Maintenance</option>
+                                <option value="Repair">Repair</option>
+                            </select>
+                        </p>
+                        <label for="description">Request description</label>
+                        <br>
+                        <textarea name="description" id="description" cols="30" placeholder="Request description"
+                            rows="10" required></textarea>
+                        <br>
+                        <button class="btn-primary" id="submit">Submit request</button>
+                    </form>
+                    </div="pop_up_form">
+                    <!-- POP UP FORM ENDS -->
+                </div>
+                <!--modal content ends-->
+    </main>
+    <script src="../../UI ELEMENTS/user-index.js"></script>
+</body>
+
+</html>
