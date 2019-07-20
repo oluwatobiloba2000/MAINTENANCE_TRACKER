@@ -10,77 +10,76 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../img/technical-support-2_icon-icons.com_52811.ico">
     <link rel="stylesheet" href="../STYLE/index.css">
+    <link rel="stylesheet" href="../STYLE/sign-up.css">
     <link rel="stylesheet" href="../STYLE/sign-in.css">
     <title>sign in | Tracky</title>
 </head>
 
 <body>
-    <header>
-        <!-- navigation starts -->
-        <nav class="navbar">
-            <!-- NAVIGATION STARTS -->
-            <nav>
-                <!-- LEFT NAV LOGO STARTS -->
-                <ul>
-                    <li class="left-nav-logo">
-                        <a class="nav_logo" href="../../index.html">
-                            <img src="https://dashkit.goodthemes.co/assets/img/logo.svg" alt="Logo"></a>
-                        <span class="nav-logo-name">Tracky</span>
-                    </li>
-
-                    <!-- LEFT NAV ENDS -->
-                    <!-- NAV RIGHT STARTS -->
-                    <!-- <li class="right_nav nav-border bg-blue">
-                        <a href="../HTML/signup.html">Register</a>
-                    </li> -->
-                </ul>
-                <!-- </div> -->
-                <!-- NAV RIGHT ENDS -->
-            </nav>
-            <!-- NAVIGATION ENDS -->
-    </header>
-    <main>
-        <section class="pt">
-            <!-- <div class="container"> -->
+    <section class="pt">
+        <div class="container">
+            <div class="md-div">
+                <header>
+                    <!-- navigation starts -->
+                    <nav class="navbar">
+                        <!-- NAVIGATION STARTS -->
+                        <nav>
+                            <!-- LEFT NAV LOGO STARTS -->
+                            <ul>
+                                <li class="left-nav-logo">
+                                    <a class="nav_logo" href="../../index.html">
+                                        <img src="https://dashkit.goodthemes.co/assets/img/logo.svg" alt="Logo"></a>
+                                    <span class="nav-logo-name">Tracky</span>
+                                </li>
+                                <!-- LEFT NAV ENDS -->
+                        </nav>
+                        <!-- NAVIGATION ENDS -->
+                </header>
+                <div class="md-div-img">
+                    <img src="../img/undraw_reminder_pa79.svg" alt="">
+                </div>
+                <h2 class="my-name-brand">
+                    Oluwatobiloba <sup>TM</sup>
+                </h2>
+            </div>
             <div class="md-div">
                 <div class="md-div-form">
-                    <form action="./admin/admin-index.html" method="GET" autocomplete="on">
-                        <!-- <p id="incorrect"><i class="fas fa-exclamation">&nbsp;Incorrect username or password</i></p> -->
+                    <form action="../HTML/admin/admin-index.html" method="GET">
                         <h2>Sign in</h2>
+                        <label for="email">
+                            <i class="fas fa-at"></i> Email :
+                            <br>
+                            <input id="email" type="email" placeholder="exmaple@gmail.com" required>
+                        </label>
+
+                        <br>
+                        <br>
+
                         <label for="username">
                             <i class="far fa-user"></i> Username :<br>
                             <input id="username" type="text" placeholder="username" required>
                         </label>
+
                         <br>
-                        <!-- javascript validation  for username begins-->
-                        <!-- <span id="validating_username">Username cannot be empty</span> -->
-                        <!-- javascript validation for username ends -->
                         <br>
+
                         <label for="password">
                             <i class="fas fa-lock"></i> Password :<br>
                             <input type="password" id="password" placeholder="password" required>
                             <span id="show_password"><i class="fas fa-eye"></i></span>
                         </label>
+
                         <br>
-                        <!-- javascript validation  for password begins-->
-                        <!-- <span id="validating_password">Password cannot be empty</span> -->
-                        <!-- javascript validation for password ends -->
-                        <p><a id="forgot_password" href="#" class="link-style-none">forgot password ?</a></p>
                         <button class="btn-primary" id="sign_in_button">Sign in</button>
 
-                        <p>Dont have an account with <span class="primary-text">Tracky</span> ? <a
-                                class="link-style-none" href="./signup.html">Sign up</a></p>
+                        <p>Dont have an account with <span class="primary-text">Tracky ?</span>
+                            <a class="link-style-none" href="./signup.html">Sign up</a></p>
                     </form>
                 </div>
             </div>
+        </div>
 
-            <!-- </div> -->
-            <div class="md-div svg-div-signin">
-                <img src="../img/rubens-nguyen-489224-unsplash.jpg" alt="">
-            </div>
-        </section>
-
-    </main>
+    </section>
     <script src="../UI ELEMENTS/sign-in.js"></script>
 </body>
 
