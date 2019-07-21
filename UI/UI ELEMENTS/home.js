@@ -8,3 +8,15 @@ document.querySelector('#bars-icon').addEventListener('click', (e)=>{
     nav1.classList.toggle('open-nav');
     nav2.classList.toggle('open-nav');
 })
+
+document.getElementById('top-scroll-btn').addEventListener('click' , ()=>{
+    document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = ()=>{
+    if(document.documentElement.scrollTop > 50){
+        document.getElementById('top-scroll-btn').style.display = 'block';
+    }else{
+        document.getElementById('top-scroll-btn').style.display = 'none';
+    }
+}

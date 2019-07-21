@@ -2,12 +2,31 @@ html {
     padding: 0;
     margin: 0;
     background-color: #EBF2FA;
-    font-family: 'Poppins', sans-serif;  
-    height: 100%; /* Used to enable scrolling */
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    /* Used to enable scrolling */
     background: linear-gradient(55deg, #0fb8ad70 0%, #1fc8dbab 51%, #2cb6e8d7 85%);
-    /**/
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f8f8f8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #505050;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 52, 71);
+}
 
 
 body {
@@ -221,6 +240,30 @@ li a {
 
 .link-style-none {
     color: #000;
+}
+
+.btn-scroll-top {
+    position: fixed;
+    width: 50px;
+    border-radius: 100px;
+    outline: none;
+    bottom: 0;
+    display: none;
+    margin-bottom: 10px;
+    right: 0;
+    margin-right: 10px;
+    height: 50px;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+    background-color: #679436;
+}
+.btn-scroll-top:hover{
+    background-color: #A5BE00;
+}
+
+.fa-angle-up {
+    font-size: 30px;
 }
 
 /* RESPONSIVE*/

@@ -25,7 +25,7 @@ btn.onclick = function () {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> close the modal
 span.onclick = function () {
   modal.style.display = "none";
   errorInputModal.classList.remove('error-modal-open');
@@ -39,6 +39,17 @@ window.onclick = function (event) {
   }
 }
 
+document.getElementById('top-scroll-btn').addEventListener('click', () => {
+  document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = () => {
+  if (document.documentElement.scrollTop > 50) {
+    document.getElementById('top-scroll-btn').style.display = 'block';
+  } else {
+    document.getElementById('top-scroll-btn').style.display = 'none';
+  }
+}
 
 const submitForm = document.getElementById("submit").addEventListener("click", (e) => {
   e.preventDefault();
