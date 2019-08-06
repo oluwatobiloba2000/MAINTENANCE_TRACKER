@@ -47,10 +47,10 @@ class RequestControllers {
             category: category,
             description: description,
             time: newDate,
-            status: pending
+            status: "pending"
         }
         // push the new data into the database
-        requestPased.push(request);
+        requestParsed.push(request);
         return res.json({
             message: `request posted !`,
 
