@@ -57,6 +57,41 @@ class RequestControllers {
             request
         })
     }
+
+    // updating requests
+    static updateRequest(req, res) {
+        const id = req.params.id;
+        const titleToUpdate = req.body.title;
+        const categoryToUpdate = req.body.category;
+        const descriptionToUpdate = req.body.description;
+        const requestToUpdate = requestParsed.find(request => request.id === id);
+
+        if (requestToUpdate) {
+            let editedPost = requestParsed.map((request) => {
+                if (request.id == id) {
+                    return {
+                        id: request.id,
+                        title: titleToUpdate || request.title,
+                        category: categoryToUpdate || request.category,
+                        description: descriptionToUpdate || request.description,
+                        time: newDate,
+                        status: request.status
+                    }
+                }
+
+                return request;
+            });
+
+            requestParsed = editedPost
+
+            return res.json({
+                message: `request updated !!`,
+            })
+        }
+        return res.status(400).json({
+            message: `cannot update request`
+        })
+    }
 }
 
 export default RequestControllers;
