@@ -6,3 +6,24 @@ import dotenv from "dotenv"
 
 // import body-parser
 import bodyParser from "body-parser"
+
+// import routes
+import appRouter from "./routes"
+
+// initialize dotenv
+dotenv.config();
+
+// initialize express
+const app = express();
+
+app.use(bodyParser.json({extended : true}));
+
+
+
+app.use(appRouter);
+
+// declear a port to run on
+const PORT = process.env.PORT || 3000;
+
+// start the server
+app.listen(PORT , ()=>{console.log(`app running on localhost:${PORT}`)});
