@@ -1,17 +1,16 @@
 import uuid from "uuid/v1";
-import requests from "../data/data";
-
-
+import {requests, newDate} from "../data/data";
+let requestParsed = JSON.parse(requests);
 class RequestControllers {
     // getting all requests
     static allRequests(req, res) {
-       return res.status(200).json({requests});
+       return res.status(200).json(requestParsed);
     }
 
     //GET /requests/:<request id>
     static getRequestById(req, res) {
         const id = req.params.id;
-        const request = requests.find(each =>
+        const request = requestParsed.find(each =>
             each.id == id
         )
         if (!request) {
@@ -41,10 +40,11 @@ class RequestControllers {
             title : title,
             category : category,
             description : description,
-            time : new Date()
+            time : newDate,
+            status : pending
         }
         // push the new data into the database
-        requests.push(request);
+        requestPased.push(request);
         return res.json({
             message : `request posted !`,
 
@@ -62,22 +62,23 @@ class RequestControllers {
         //get all the tequest form the body
         //get the single request to update
         // update the reqyes
-        const requestToUpdate = requests.find(request => request.id === id);
+        const requestToUpdate = requestParsed.find(request => request.id === id);
         if(requestToUpdate){
-            let editedPost = requests.map((request)=> {
+            let editedPost = requestParsed.map((request)=> {
                     if(request.id == id) {
                         return {
                             id: request.id,
                             title: titleToUpdate || request.title,
                             category: categoryToUpdate || request.category,
                             description: descriptionToUpdate || request.description,
-                            time: new Date()
+                            time: newDate,
+                            status: request.status
                         }
                     }
 
                     return request;
             });
-            requests = editedPost
+            requestParsed = editedPost
             return res.json({
                 message : `request updated !!`,
             })
@@ -85,7 +86,6 @@ class RequestControllers {
         return res.status(400).json({
             message : `cannot update request`
         })
-        
     }
 
 }
