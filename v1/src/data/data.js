@@ -1,8 +1,7 @@
-import uuid from "uuid/v1";
 const newDate = new Date().toString();
 
 let requests = JSON.stringify([{
-        id: uuid(),
+        id: 1,
         title: "lorem 1",
         category: "maintenance",
         description: "lorem lorem lorem",
@@ -10,7 +9,7 @@ let requests = JSON.stringify([{
         status: "pending"
     },
     {
-        id: uuid(),
+        id: 2,
         title: "lorem 2",
         category: "maintenance",
         description: "lorem lorem lorem",
@@ -18,7 +17,7 @@ let requests = JSON.stringify([{
         status: "pending"
     },
     {
-        id: uuid(),
+        id: 3,
         title: "lorem 3",
         category: "maintenance",
         description: "lorem lorem lorem",
@@ -26,7 +25,7 @@ let requests = JSON.stringify([{
         status: "pending"
     },
     {
-        id: uuid(),
+        id: 4,
         title: "lorem 4",
         category: "maintenance",
         description: "lorem lorem lorem",
