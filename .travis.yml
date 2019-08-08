@@ -8,6 +8,6 @@ cache:
   -"node_modules":
 
 script:
-  - run test
+  - npm test
 
 after_success: npm run coverage
