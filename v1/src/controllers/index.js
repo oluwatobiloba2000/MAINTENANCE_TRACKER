@@ -64,7 +64,7 @@ class RequestControllers {
         const titleToUpdate = req.body.title;
         const categoryToUpdate = req.body.category;
         const descriptionToUpdate = req.body.description;
-        const requestToUpdate = requestParsed.find(request => request.id === id);
+        const requestToUpdate = requestParsed.find(request => request.id == id);
 
         if (requestToUpdate) {
             let editedPost = requestParsed.map((request) => {
