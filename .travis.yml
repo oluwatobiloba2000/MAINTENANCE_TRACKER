@@ -1,3 +1,5 @@
+sudo: false
+
 language: node_js
 
 node_js:
@@ -8,6 +10,6 @@ cache:
   -"node_modules":
 
 script:
-  - npm test
+  - npm lint
 
 after_success: npm run coverage
