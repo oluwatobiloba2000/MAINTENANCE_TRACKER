@@ -1,6 +1,5 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import uuid from 'uuid/v1'
 import app from "../server";
 
 //configure chai to use chai-http
