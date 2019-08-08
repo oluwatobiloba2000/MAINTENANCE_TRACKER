@@ -13,3 +13,6 @@ script:
   - npm lint
 
 after_success: npm run coverage
+
+notifications:
+  email: false
