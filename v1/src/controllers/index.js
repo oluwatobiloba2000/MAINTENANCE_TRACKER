@@ -1,4 +1,3 @@
-import uuid from "uuid/v1";
 import {
     requests,
     newDate
@@ -40,7 +39,7 @@ class RequestControllers {
             });
         }
 
-        const id = uuid();
+        const id = requestParsed.length + 1;
         const request = {
             id: id,
             title: title,
