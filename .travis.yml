@@ -1,0 +1,19 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "stable"
+
+
+before_script:
+  - cd v1
+
+script:
+  - npm install
+  - npm test
+
+after_success: npm run coverage
+
+notifications:
+  email: false

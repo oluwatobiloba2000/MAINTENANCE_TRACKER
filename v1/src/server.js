@@ -27,3 +27,6 @@ const PORT = process.env.PORT || 3000;
 
 // start the server
 app.listen(PORT , ()=>{console.log(`app running on localhost:${PORT}`)});
+
+//exporting app for testing purposes
+export default app;

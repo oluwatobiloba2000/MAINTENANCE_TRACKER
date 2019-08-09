@@ -1,4 +1,3 @@
-import uuid from "uuid/v1";
 import {
     requests,
     newDate
@@ -40,7 +39,7 @@ class RequestControllers {
             });
         }
 
-        const id = uuid();
+        const id = requestParsed.length + 1;
         const request = {
             id: id,
             title: title,
@@ -64,7 +63,7 @@ class RequestControllers {
         const titleToUpdate = req.body.title;
         const categoryToUpdate = req.body.category;
         const descriptionToUpdate = req.body.description;
-        const requestToUpdate = requestParsed.find(request => request.id === id);
+        const requestToUpdate = requestParsed.find(request => request.id == id);
 
         if (requestToUpdate) {
             let editedPost = requestParsed.map((request) => {
