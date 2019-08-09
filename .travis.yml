@@ -5,14 +5,12 @@ language: node_js
 node_js:
   - "stable"
 
-cache:
-  directories:
-  -"node_modules":
 
 before_script:
   - cd v1
 
 script:
+  - npm install
   - npm test
 
 after_success: npm run coverage
