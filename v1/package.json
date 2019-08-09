@@ -4,7 +4,7 @@
   "description": "This is a maintenance tracker app",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha --require @babel/register src/test/test.js -exit",
+    "test": "mocha --require @babel/register src/test/test.js -exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon --exec babel-node src/server.js",
     "start:dev": " babel-node src/server.js"
