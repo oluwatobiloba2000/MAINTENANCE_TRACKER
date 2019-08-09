@@ -10,7 +10,7 @@ cache:
   -"node_modules":
 
 before_script:
-  - npm install
+  - cd v1
 
 script:
   - npm test
