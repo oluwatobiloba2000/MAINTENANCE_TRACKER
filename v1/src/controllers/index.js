@@ -73,19 +73,13 @@ class RequestControllers {
                         category: categoryToUpdate || request.category,
                         description: descriptionToUpdate || request.description,
                         time: newDate,
-                        status: request.status
-                    }
-                }
+                        status: request.status}}
                 return request;
             });
             requestParsed = editedPost
-            return res.json({
-                message: `request updated !!`,
-            })
+            return res.json({ message: `request updated !!`})
         }
-        return res.status(400).json({
-            message: `cannot update request`
-        })
+        return res.status(400).json({message: `cannot update request`})
     }
 }
 
