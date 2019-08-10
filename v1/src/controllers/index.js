@@ -64,7 +64,6 @@ class RequestControllers {
         const categoryToUpdate = req.body.category;
         const descriptionToUpdate = req.body.description;
         const requestToUpdate = requestParsed.find(request => request.id == id);
-
         if (requestToUpdate) {
             let editedPost = requestParsed.map((request) => {
                 if (request.id == id) {
@@ -77,12 +76,9 @@ class RequestControllers {
                         status: request.status
                     }
                 }
-
                 return request;
             });
-
             requestParsed = editedPost
-
             return res.json({
                 message: `request updated !!`,
             })
