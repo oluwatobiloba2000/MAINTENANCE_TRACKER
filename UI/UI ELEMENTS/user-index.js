@@ -39,18 +39,6 @@ window.onclick = function (event) {
   }
 }
 
-document.getElementById('top-scroll-btn').addEventListener('click', () => {
-  document.documentElement.scrollTop = 0;
-});
-
-window.onscroll = () => {
-  if (document.documentElement.scrollTop > 50) {
-    document.getElementById('top-scroll-btn').style.display = 'block';
-  } else {
-    document.getElementById('top-scroll-btn').style.display = 'none';
-  }
-}
-
 const submitForm = document.getElementById("submit").addEventListener("click", (e) => {
   e.preventDefault();
   //getting the inputs form the user
