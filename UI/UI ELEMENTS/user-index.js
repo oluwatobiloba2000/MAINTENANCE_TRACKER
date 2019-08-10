@@ -52,10 +52,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", (
     // making a request
     const cardBody = document.querySelector("#card");
     newDiv = document.createElement("div");
-    newDiv.innerHTML = `<p style="margin :0 ;
-      padding : 1%;
-      background: rgba(5, 102, 141, 0.342);
-      ">${title}</p>
+    newDiv.innerHTML = `<p style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${title}</p>
       <p style="float : right; background-color: #A5BE00; padding: 0.4%;">${date}</p>
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${postCategory}</p>
@@ -64,10 +61,8 @@ const submitForm = document.getElementById("submit").addEventListener("click", (
       text-align: right;">pending</p>`
     newDiv.classList.add("requests");
     cardBody.insertAdjacentElement('beforebegin', newDiv);
-
     // cleared the user inputs
     document.getElementById("form").reset();
-
     modal.style.display = "none";
     errorInputModal.classList.remove('error-modal-open');
   }
