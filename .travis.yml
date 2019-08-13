@@ -6,9 +6,6 @@ node_js:
   - "stable"
 
 
-before_script:
-  - cd v1
-
 script:
   - npm install
   - npm test
