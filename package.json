@@ -1,0 +1,45 @@
+{
+  "name": "maintenance-tracker-api",
+  "version": "1.0.0",
+  "description": "This is a maintenance tracker app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --require @babel/register v1/src/test/test.js -exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "start": "nodemon --exec babel-node v1/src/server.js",
+    "start:dev": " babel-node v1/src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oluwatobiloba2000/MAINTENANCE_TRACKER_FINAL.git"
+  },
+  "author": "Anani oluwatobiloba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oluwatobiloba2000/MAINTENANCE_TRACKER_FINAL/issues"
+  },
+  "homepage": "https://github.com/oluwatobiloba2000/MAINTENANCE_TRACKER_FINAL#readme",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.0.6",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0"
+  }
+}
