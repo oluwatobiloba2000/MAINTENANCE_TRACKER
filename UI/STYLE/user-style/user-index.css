@@ -87,6 +87,10 @@ body {
 
 .navbar-logo img {
     width: 50px;
+    transition: 1s ease;
+}
+.navbar-logo img:hover {
+    transform: rotateY(200deg)
 }
 
 .navbar-sublist {
@@ -180,7 +184,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -223,7 +227,13 @@ body {
     border: 1px solid #05668D;
     padding: 10px;
     border-radius: 10px;
+    transition: 1s ease;
     width: -webkit-fill-available;
+}
+
+#submit:hover{
+    background-color: #000;
+    transform: scale(1.1);
 }
 
 .btn-primary {
@@ -290,6 +300,80 @@ body {
     font-size: 30px;
 }
 
+.networkerror{
+    position: fixed;
+    /* transform: translateY(50px); */
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #000;
+    border-radius: 4px 4px 0 0;
+    width: 100px;
+    height: 50px;
+    bottom: 0;
+    z-index: 100;
+    left: 0;
+}
+.ntw-content-offline{
+    padding-left: 1.5em;
+}
+
+.ntw-content-offline:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 0.9em;
+    width: 0.5em;
+    left: 1em;
+    content: " ";
+    margin: auto;
+    width: 15px;
+    border-radius: 50px;
+    background-color: #e24949;
+}
+.ntw-content-online{
+    padding-left: 1.5em;
+}
+
+.ntw-content-online:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 0.9em;
+    width: 0.8em;
+    left: 1em;
+    content: " ";
+    margin: auto;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #80d580;
+}
+
+.ntw-content-online-open {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.ntw-content-offline-open {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.network-error-message{
+    text-align: center;
+    position: fixed;
+    background-color: #000;
+    border-radius: 4px 4px 0 0;
+    width: 50%;
+    left: 5%;
+    right: 5%;
+    bottom: 30px;
+    background-color: rgb(16, 10, 98);
+    color: #EBF2FA;
+}
 /* error modal ends */
 
 @media all and (max-width:900px) {

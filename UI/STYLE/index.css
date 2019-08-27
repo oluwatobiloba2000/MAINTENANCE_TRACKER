@@ -72,6 +72,12 @@ li a {
 
 .nav_logo img {
     width: 50px;
+    transition: 1s ease;
+}
+
+.nav_logo img:hover{
+    width: 50px;
+    transform: skewX(20deg)
 }
 
 .left-nav-logo {
@@ -264,6 +270,56 @@ li a {
 
 .fa-angle-up {
     font-size: 30px;
+}
+.networkerror{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #000;
+    border-radius: 4px 4px 0 0;
+    width: 100px;
+    height: 50px;
+    bottom: 0;
+    z-index: 100;
+    right: 20px;
+}
+.ntw-content-offline{
+    padding-left: 1.5em;
+}
+
+.ntw-content-offline:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 0.9em;
+    width: 0.5em;
+    left: 1em;
+    content: " ";
+    margin: auto;
+    width: 15px;
+    border-radius: 50px;
+    background-color: #e24949;
+}
+.ntw-content-online{
+    padding-left: 1.5em;
+}
+
+.ntw-content-online:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 0.9em;
+    width: 0.8em;
+    left: 1em;
+    content: " ";
+    margin: auto;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #80d580;
 }
 
 /* RESPONSIVE*/

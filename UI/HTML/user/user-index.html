@@ -73,7 +73,13 @@
                         <i class="far fa-user"></i> Logged in as <span class="username-update">User</span>
                     </li>
                 </div>
-
+                    </li>
+                </div>
+                <!-- <li class="navbar-list">
+                        <div title="Network status" class="networkerror status error-transition">
+                         <div class="i"></div>
+                       </div>
+                </li> -->
             </ul>
 
         </nav>
@@ -105,7 +111,7 @@
                     <form id="form">
                         <!--method="GET" action="/UI/UI Elements/HTML/user.html" -->
                         <h2>Make a request</h2>
-                        <label for="title">Title
+                        <label  for="title">Title
                             <br>
                             <input id="title" name="title" placeholder="Request title" type="text" required>
                         </label>
@@ -125,14 +131,26 @@
                         <br>
                         <button class="btn-primary" id="submit">Submit request</button>
                     </form>
-                    </div="pop_up_form">
+                    </div>
                     <!-- POP UP FORM ENDS -->
                 </div>
                 <!--modal content ends-->
             </div>
     </main>
+    <!-- <div class="network-error-message error-transition">
+        <p>Network connection error trying to reconnect .......</p>
+    </div> -->
+    <!-- <div class="networkerror online error-transition">
+            <div class="ntw-content-online">online</div>
+    </div> -->
+
+            <div title="Network status" class="networkerror status error-transition">
+                <div class="i"></div>
+            </div>
+
     <script src="../../UI ELEMENTS/user-index.js"></script>
     <script src="../../UI ELEMENTS/home.js"></script>
+    <script src="../../UI ELEMENTS/networkerror.js"></script>
 </body>
 
 </html>
