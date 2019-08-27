@@ -7,6 +7,8 @@ import dotenv from "dotenv"
 // import body-parser
 import bodyParser from "body-parser"
 
+import cors from 'cors';
+
 // import routes
 import appRouter from "./routes"
 
@@ -21,6 +23,8 @@ app.use(bodyParser.json({extended : true}));
 
 
 app.use(appRouter);
+
+app.use(cors());
 
 // declear a port to run on
 const PORT = process.env.PORT || 3000;
