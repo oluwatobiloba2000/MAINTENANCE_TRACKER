@@ -12,13 +12,13 @@ document.querySelector('#bars-icon').addEventListener('click', () => {
 });
 
 // Get the modal
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("request-btn");
+const btn = document.getElementById("request-btn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -48,17 +48,22 @@ const submitForm = document.getElementById("submit").addEventListener("click", (
   let date = new Date();
   if (title.trim() === '' || postDescription.trim() === '') {
     errorInputModal.classList.add('error-modal-open');
+
+    setTimeout(()=>{
+      errorInputModal.classList.remove('error-modal-open');
+    } , 3000);
+
   } else {
     // making a request
     const cardBody = document.querySelector("#card");
     newDiv = document.createElement("div");
-    newDiv.innerHTML = `<p style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${title}</p>
+    newDiv.innerHTML = `<p contenteditable style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${title}</p>
       <p style="float : right; background-color: #A5BE00; padding: 0.4%;">${date}</p>
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${postCategory}</p>
       <p style="padding : 3px;border : 1px solid green">${postDescription}</p>
       <p style="margin-right: 3px;
-      text-align: right;">pending</p>`
+      text-align: right;"><button (edit)">EDIT</button>pending</p>`
     newDiv.classList.add("requests");
     cardBody.insertAdjacentElement('beforebegin', newDiv);
     // cleared the user inputs
@@ -67,3 +72,8 @@ const submitForm = document.getElementById("submit").addEventListener("click", (
     errorInputModal.classList.remove('error-modal-open');
   }
 });
+
+document.getElementById('edit').addEventListener('click' , ()=>{
+  let edited = document.querySelector('.requests').value;
+  console.log(edited);
+})
