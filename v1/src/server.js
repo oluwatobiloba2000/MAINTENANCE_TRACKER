@@ -21,10 +21,10 @@ const app = express();
 app.use(bodyParser.json({extended : true}));
 
 
+app.use(cors());
 
 app.use(appRouter);
 
-app.use(cors());
 
 // declear a port to run on
 const PORT = process.env.PORT || 3000;

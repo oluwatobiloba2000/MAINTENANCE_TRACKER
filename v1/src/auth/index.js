@@ -12,9 +12,7 @@ class Authentication {
         const password  = req.body.password;
         try{
          if(!username || !password){
-        return res.json({
-             message : "Username and password are required"
-         })
+        return res.json("Username and password are required")
            }else if(username == process.env.ADMINUSERNAME && password == process.env.ADMINPASSWORD ){
         jwt.sign({username , password}, process.env.ADMINKEY , {expiresIn : '7d'} , (err , token)=>{
           if(err){
@@ -22,7 +20,8 @@ class Authentication {
             }
 
           res.status(200).json({
-                "admin token" : token
+                 message: "sign in admin success",
+                admintoken : token
             });
          })
      }else{
@@ -39,7 +38,7 @@ class Authentication {
                 console.log(err);
             }else{
                 return res.status(200).json({
-                    message: "sign in success",
+                    message: "sign in user success",
                     user: checkUserName.rows,
                     Hashmatch : match,
                     usertoken : token
@@ -47,9 +46,7 @@ class Authentication {
      }
     })
         }else{
-         res.json({
-             message : "incorrect username or password"
-         })
+         res.json("incorrect username or password")
      }
      }
     }catch(err){
@@ -70,21 +67,15 @@ class Authentication {
          const value = [username];
          const existedUser = await pool.query(confirmUniqueUsernameQuery , value);
          if(!username || !password){
-             return res.status(400).json({
-                 message : "Username and password required"
-             })
+             return res.json("Username and password required")
           }
 
          if(existedUser.rows[0]){
-         return  res.json({
-           message :  "username has been taken"
-         });
+         return  res.json("username has been taken");
         }
 
         if(username === process.env.ADMINUSERNAME){
-            return res.json({
-                message :  "username has been taken"
-            })
+            return res.json("username has been taken")
         }
                 //  hash the incoming password
            const salt = await bcrypt.genSalt(10);
@@ -102,7 +93,7 @@ class Authentication {
                             message: "sign up success",
                             user: signedUser.rows,
                             passphase,
-                            token
+                            usertoken : token
                         })
              }
          })

@@ -2,7 +2,9 @@
     display: flex;
     align-items: center;
 }
-
+.md-form{
+    display: flex;
+}
 *{
     transition: 2s ease;
 }

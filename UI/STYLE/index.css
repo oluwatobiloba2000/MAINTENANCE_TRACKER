@@ -75,7 +75,7 @@ li a {
     transition: 1s ease;
 }
 
-.nav_logo img:hover{
+.nav_logo img:hover {
     width: 50px;
     transform: skewX(20deg)
 }
@@ -264,14 +264,16 @@ li a {
     cursor: pointer;
     background-color: #679436;
 }
-.btn-scroll-top:hover{
+
+.btn-scroll-top:hover {
     background-color: #A5BE00;
 }
 
 .fa-angle-up {
     font-size: 30px;
 }
-.networkerror{
+
+.networkerror {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -285,11 +287,12 @@ li a {
     z-index: 100;
     right: 20px;
 }
-.ntw-content-offline{
+
+.ntw-content-offline {
     padding-left: 1.5em;
 }
 
-.ntw-content-offline:after{
+.ntw-content-offline:after {
     display: block;
     position: absolute;
     top: 0;
@@ -303,11 +306,12 @@ li a {
     border-radius: 50px;
     background-color: #e24949;
 }
-.ntw-content-online{
+
+.ntw-content-online {
     padding-left: 1.5em;
 }
 
-.ntw-content-online:after{
+.ntw-content-online:after {
     display: block;
     position: absolute;
     top: 0;
@@ -320,6 +324,83 @@ li a {
     width: 15px;
     border-radius: 50%;
     background-color: #80d580;
+}
+/* error modal starts */
+.errormodal {
+    color: #EBF2FA;
+    opacity: 0;
+    top: 0;
+    z-index: 31;
+    padding: 16px;
+    width: 100%;
+    border-radius: 15px;
+    transform: translateY(-50px);
+    /* background: -webkit-linear-gradient(-180deg, rgb(251, 176, 30), rgb(229, 2, 18), rgb(192, 6, 156)) */
+}
+.user-red{
+    background-color: #e25c3d;
+    transform: translateY(0);
+    opacity: 1;
+}
+.user-error-open{
+    transform: translateY(0);
+    opacity: 1;
+    background-color: blue;
+}
+
+.errormodal p {
+    text-align: center;
+    margin: 0;
+}
+
+.error-transition {
+    transition: all .6s ease;
+}
+
+.error-modal-open {
+    transform: translateY(0);
+    opacity: 1;
+}
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.background-loader{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(235, 242, 250, 0.959);
+}
+.user-green{
+    background-color: green;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* RESPONSIVE*/

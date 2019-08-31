@@ -15,7 +15,7 @@
     <title>sign in | Tracky</title>
 </head>
 
-<body>
+<body onload="load()">
     <section class="pt">
         <div class="container">
             <div class="md-div">
@@ -42,19 +42,13 @@
                     Oluwatobiloba <sup>TM</sup>
                 </h2>
             </div>
-            <div class="md-div">
+            <div class="md-div md-form">
                 <div class="md-div-form">
                     <form action="" method="">
                         <h2>Sign in</h2>
-                        <label for="email">
-                            <i class="fas fa-at"></i> Email :
-                            <br>
-                            <input id="email" type="email" placeholder="exmaple@gmail.com" required>
-                        </label>
-
-                        <br>
-                        <br>
-
+                        <!-- error div starts -->
+                        <div class="errormodal error-transition"></div>
+                        <!-- errror div ends -->
                         <label for="username">
                             <i class="far fa-user"></i> Username :<br>
                             <input id="username" type="text" placeholder="username" required>
@@ -78,9 +72,11 @@
                 </div>
             </div>
         </div>
-
+        <div class="loader-back background-loader">
+            <div id="loader"></div>
+        </div>
     </section>
-    <script src="../UI ELEMENTS/sign-in.js"></script>
+    <script src="../../frontend/signin.js"></script>
 </body>
 
 </html>

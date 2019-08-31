@@ -151,7 +151,7 @@ static allRequestsAdmin(req, res) {
                       return res.status(404).json("Cannot approve request");
                   }
                   const result = request.rows[0];
-                  if(result.status === "pending"){
+                  if(result.status == "pending"){
                   const title = result.title;
                   const category = result.category;
                   const description = result.description;
@@ -215,7 +215,7 @@ static allRequestsAdmin(req, res) {
         })
 }
 
-   //disapproving a request
+   //resolving a request
    static disapproveRequest(req, res) {
     jwt.verify(req.token, process.env.ADMINKEY, async (err, authorizedData) => {
         if (err) {
