@@ -55,7 +55,7 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
         errorDisplay.innerHTML = `<p>Login success, please wait you will be redirected in few seconds ......</p>`
         errorDisplay.classList.add('user-green');
         window.localStorage.setItem('user-token' , response["usertoken"]);
-        return  setTimeout(()=>{
+         setTimeout(()=>{
           window.location.href = "../HTML/user/user-index.html";
             errorDisplay.classList.remove('user-green');
               }, 1000)
