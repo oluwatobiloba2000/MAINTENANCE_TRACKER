@@ -405,15 +405,13 @@ body {
 .grey-text{
     color: grey;
     text-align: center;
-    position: fixed;
     font-size: 50px;
     opacity: 1;
     font-family: 'Chilanka', cursive;
     transition: 1s ease;
 }
 .design-text{
-    
-    font-family: 'Satisfy', cursive;
+    font-family: 'Poppins', cursive;
 }
 
 @keyframes spin {
@@ -426,6 +424,10 @@ body {
     }
 }
 @media all and (max-width:900px) {
+    .grey-text{
+        font-size: 2em;
+    }
+
     .navbar-mobile {
         display: flex;
         justify-content: space-between;

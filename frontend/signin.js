@@ -33,10 +33,7 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
     e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const signinBody = {
-        username: username,
-        password: password
-    }
+    const signinBody = {username: username, password: password}
     const response = await fetch(`http:localhost:3000/auth/login`, {
         method: "POST",
         body: JSON.stringify(signinBody),
@@ -50,16 +47,10 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
 
     if(response === "Username and password are required"){
         errorDisplay.innerHTML = `<p>Username and password required</p>`
-        errorDisplay.classList.add('user-error-open');
-       return  setTimeout(()=>{
-            errorDisplay.classList.remove('user-error-open');
-              }, 2000)
-    }else if(response === 'incorrect username or password' || response === 'username does not exist on our server'){
-        errorDisplay.innerHTML = `<p>Incorrect username or password</p>`
         errorDisplay.classList.add('user-red');
-       return  setTimeout(()=>{
-            errorDisplay.classList.remove('user-red');
-              }, 2000)
+    }else if(response === 'incorrect username or password' || response === 'username does not exist on our server'){
+        errorDisplay.innerHTML = `<p><i class="fas fa-exclamation-triangle"></i> Incorrect username or password</p>`
+        errorDisplay.classList.add('user-red');
     }else if(response["message"] === 'sign in user success'){
         errorDisplay.innerHTML = `<p>Login success, please wait you will be redirected in few seconds ......</p>`
         errorDisplay.classList.add('user-green');
@@ -72,15 +63,8 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
       errorDisplay.innerHTML = `<p>Login success, welcome Admin</p>`
         errorDisplay.classList.add('user-green');
         window.localStorage.setItem('admin-token' , response["admintoken"]);
-        return  setTimeout(()=>{
           window.location.href = "../HTML/admin/admin-index.html";
-            errorDisplay.classList.remove('user-green');
-              }, 1000)
     }else{
       errorDisplay.innerHTML = `<p>something unexpected happened</p>`
       errorDisplay.classList.add('user-red');
-     return  setTimeout(()=>{
-          errorDisplay.classList.remove('user-red');
-            }, 2000)
-    }
-})
+    }})

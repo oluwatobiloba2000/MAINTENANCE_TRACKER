@@ -393,6 +393,13 @@ li a {
     opacity: 1;
 }
 
+.error{
+    border: 2px solid black;
+    background-color: #e24949;
+    color: #EBF2FA;
+    width: 100%;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

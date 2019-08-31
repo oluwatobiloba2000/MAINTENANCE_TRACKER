@@ -37,6 +37,8 @@ input:hover{
 }
 .md-div-form {
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 @media all and (max-width:900px){

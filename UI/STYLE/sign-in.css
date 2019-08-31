@@ -1,9 +1,14 @@
 .md-div-form{
     display: flex;
     align-items: center;
+    width: -webkit-fill-available;
 }
 .md-form{
     display: flex;
+}
+form{
+    border: 2px solid grey;
+    padding: 10px;
 }
 *{
     transition: 2s ease;
