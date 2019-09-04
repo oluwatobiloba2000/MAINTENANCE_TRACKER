@@ -89,11 +89,7 @@ static updateRequest(req, res) {
               if (!request.rows.length){
                   return res.status(404).json("Awwwwn snap ID not found");
               }
-              if(request.rows[0].status === "Approved"){
-                  return res.json({
-                      message : "request approved cannot be edited"
-                  })
-              }
+              if(request.rows[0].status === "pending"){
               const result = request.rows[0];
               const title = req.body.title || result.title;
               const category = req.body.category || result.category;
@@ -105,7 +101,11 @@ static updateRequest(req, res) {
               return res.json({
                 message: "request updated successfully",
                 request: updatedRequest.rows
-              });
+              })}else{
+                 return res.json({
+                      message : "request approved cannot be edited"
+                  })
+              }
             } catch (e) {
                 console.log(e);
               return res.status(400).send({

@@ -44,7 +44,6 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
           .catch(e => e)
           // making a request
           const cardBody = document.querySelector("#card");
-  console.log(response)
   const newDiv = document.createElement('div');
   response.request.forEach(e => {
     newDiv.innerHTML += `<p class="title-${e.id} request-title">${e.title}</p>
