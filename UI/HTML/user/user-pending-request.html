@@ -35,7 +35,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-                <i class="far fa-user"></i><span class="username-update">Tobbyloba2000</span>
+                <i class="far fa-user"></i><span class="username-update"> user</span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -65,7 +65,7 @@
                 </li> -->
             </ul>
             <ul class="navbar-sublist">
-                <li class="navbar-list hover-red">
+                <li id="log-out" class="navbar-list hover-red">
                     <a href="../../../index.html"><i class="fas fa-door-open"></i> Log out</a>
                 </li>
                 <br>
@@ -85,13 +85,14 @@
                 <div class="container">
                     <div class="container-body">
                         <h1>Dashboard</h1>
-                        <p>Pending request</p>
+                        <p>Pending request [<span id="number-of-request">0</span>]</p>
                     </div>
                 </div>
             </div>
             <div class="container">
-
-
+                  <div id="card" class="card">
+                  </div>
+                </div>
             </div>
         </div>
         </div>
@@ -130,12 +131,14 @@
                     <!-- POP UP FORM ENDS -->
                 </div>
                 <!--modal content ends-->
-
+                <span id="request-btn"></span>
     </main>
         <div class="networkerror">
             <div class="ntw-content-online">online</div>
         </div>
     <script src="../../UI ELEMENTS/user-index.js"></script>
+    <script src="../../../frontend/pending-request-user.js"></script>
+    <script src="../../../frontend/logout.js"></script>
 </body>
 
 </html>

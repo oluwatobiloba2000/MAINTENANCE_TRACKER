@@ -13,8 +13,10 @@
     <title>All request-admin | Tracky</title>
 </head>
 
-<body>
+<body onload="load()">
     <header>
+        <div class="modal-error-content-green success">
+        </div>
         <button id="top-scroll-btn" class="btn-scroll-top">
             <i class="fas fa-angle-up"></i>
         </button>
@@ -47,7 +49,7 @@
                 </li>
             </ul>
             <ul class="navbar-sublist">
-                <li class="navbar-list hover-red">
+                <li id="log-out" class="navbar-list hover-red">
                     <a href="../../../index.html"><i class="fas fa-door-open"></i> Log out</a>
                 </li>
                 <br>
@@ -67,23 +69,26 @@
                 <div class="container">
                     <div class="container-body">
                         <h1>Dashboard</h1>
-                        <p>All request</p>
+                        <p>All request [<span id="number-of-request">0</span>]</p>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="card">
+                <div id="card" class="card">
 
                 </div>
             </div>
         </div>
         </div>
+          <!-- css loader div -->
+    <div class="loader-back background-loader">
+            <div id="loader"></div>
+        </div>
+        <!-- css loader div ends -->
     </main>
-    <div class="networkerror">
-        <div class="ntw-content-online">online</div>
-    </div>
     <script src="../../UI ELEMENTS/admin-index.js"></script>
-    <script src="../../UI ELEMENTS/networkerror.js"></script>
+    <script src="../../../frontend/admin/allrequest-admin.js"></script>
+    <script src="../../../frontend/admin/admin-logout.js"></script>
 </body>
 
 </html>

@@ -14,10 +14,16 @@
 </head>
 
 <body onload="load()">
-    <header>
-        <button id="top-scroll-btn" class="btn-scroll-top">
-            <i class="fas fa-angle-up"></i>
-        </button>
+        <header>
+            <button id="top-scroll-btn" class="btn-scroll-top">
+                <i class="fas fa-angle-up"></i>
+            </button>
+                    <div class="modal-error-content-green success">
+                        <p>success</p>
+                    </div>
+               <!-- <div class="modal-error-content-green">
+                        <p>You will have to log in</p>
+                </div> -->
         <!-- error modal starts -->
         <!-- The Modal -->
         <div id="errorModal" class="errormodal error-transition">
@@ -27,7 +33,6 @@
                 <span class="close-error-modal">X</span>
                 <p>Request input cannot be empty</p>
             </div>
-
         </div>
         <!-- error modal ends -->
         <div class="navbar-mobile">
@@ -35,7 +40,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-                <i class="far fa-user"></i><span class="username-update">Tobbyloba2000</span>
+                <i class="far fa-user"></i><span class="username-update"> user</span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -64,7 +69,7 @@
                 </li>
             </ul>
             <ul class="navbar-sublist">
-                <li class="navbar-list hover-red">
+                <li class="navbar-list hover-red" id="log-out">
                     <a href="../../../index.html"><i class="fas fa-door-open"></i> Log out</a>
                 </li>
                 <br>
@@ -90,7 +95,7 @@
                 <div class="container">
                     <div class="container-body">
                         <h1>Dashboard</h1>
-                        <p>All request</p>
+                        <p>All request [<span id="number-of-request">0</span>]</p>
                     </div>
                 </div>
             </div>
@@ -142,14 +147,8 @@
                 <!--modal content ends-->
             </div>
     </main>
-    <!-- <div class="network-error-message error-transition">
-        <p>Network connection error trying to reconnect .......</p>
-    </div> -->
-    <!-- <div class="networkerror online error-transition">
-            <div class="ntw-content-online">online</div>
-    </div> -->
-
     <!-- css loader div -->
+    <div id="bars-icon"></div>
     <div class="loader-back background-loader">
         <div id="loader"></div>
     </div>
@@ -162,6 +161,7 @@
     <script src="../../../frontend/allrequest.js"></script>
     <script src="../../UI ELEMENTS/home.js"></script>
     <script src="../../UI ELEMENTS/networkerror.js"></script>
+    <script src="../../../frontend/logout.js"></script>
 </body>
 
 </html>

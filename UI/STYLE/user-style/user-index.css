@@ -404,16 +404,108 @@ body {
 
 .grey-text{
     color: grey;
+    display: none;
     text-align: center;
     font-size: 50px;
     opacity: 1;
     font-family: 'Chilanka', cursive;
     transition: 1s ease;
 }
+.grey-text-show{
+    display: block;
+}
+
+.modal-error-content-green{
+    color: #EBF2FA;
+    position: fixed;
+    top: 0;
+    z-index: 31;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-57px);
+    transition: 1s ease;
+    background-color: green;
+}
+
 .design-text{
     font-family: 'Poppins', cursive;
 }
 
+.request-edit-button{
+    outline: none;
+    width: 80px;
+    float: left;
+    background-color: #05668D;
+    color: #EBF2FA;
+    cursor: pointer;
+    height: 25px;
+    border-top-right-radius: 15px;
+    border: none;
+    transition: 0.5s ease;
+}
+.request-edit-button:hover{
+    background-color: blue;
+    color: white;
+}
+.request-save-button{
+    width: 80px;
+    display: block;
+    float: left;
+    background-color: #679436;
+    color: #EBF2FA;
+    cursor: pointer;
+    height: 25px;
+    margin-left: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    transition: 0.5s ease;
+}
+.request-save-button:hover{
+    background-color: green;
+    color: white;
+}
+.request-cancel-button{
+    display: block;
+    width: 100px;
+    float: left;
+    background-color: #e24949;
+    color: #EBF2FA;
+    cursor: pointer;
+    height: 25px;
+    margin-left: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    transition: 0.5s ease;
+}
+
+.request-cancel-button:hover{
+    background-color: red;
+    color: white;
+}
+.edit-border{
+    transition: 1s ease;
+    box-shadow : 0 2px 11px 0 rgba(255, 0, 0, 0.979), 0 2px 11px 0 rgba(255, 4, 4, 0.993);
+}
+
+.request-title{
+    margin :0 ; padding : 1%;
+    background: rgba(5, 102, 141, 0.342);
+}
+.request-time{
+    float : right;
+    background-color: #A5BE00;
+    padding: 0.4%;
+}
+.request-description{
+    padding : 3px;
+    border : 1px solid green
+}
+.request-status{
+    margin-right: 3px;
+    text-align: right;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);
