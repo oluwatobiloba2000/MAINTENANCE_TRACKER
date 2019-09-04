@@ -40,6 +40,10 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 })
+// configure path to load html files
+const frontend = path.join(__dirname, '../../UI');
+
+app.use(express.static(frontend));
 
 app.use(appRouter);
 
@@ -48,10 +52,6 @@ app.use(appRouter);
 const PORT = process.env.PORT || 3000;
 
 
-// configure path to load html files
-const frontend = path.join(__dirname, '../../UI');
-
-app.use(express.static(frontend));
 
 // start the server
 app.listen(PORT, () => {
