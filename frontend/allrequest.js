@@ -143,7 +143,6 @@ async function save(id){
       .then(response => response)
         .catch(e => e)
         // making a request
-console.log(response)
 const newDiv = document.createElement('div');
 response.request.forEach(e => {
   newDiv.innerHTML += `<div class="request"><p contenteditable style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${e.title}</p>
