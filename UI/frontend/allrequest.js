@@ -17,7 +17,7 @@ const checkToken = ()=>{
   if(token){
     return token;
   }
-  window.location.href = '../HTML/signin.html';
+  window.location.href = '../signin.html';
 };
 
 let path = `https://tracky-maintenance-app.herokuapp.com`;
@@ -86,7 +86,7 @@ async function getAllRequest(){
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../HTML/signin.html'
+            window.location.href = '../signin.html'
         }, 3000)
       }else{
             // making a request
