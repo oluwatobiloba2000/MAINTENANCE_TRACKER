@@ -7,7 +7,7 @@ const checkToken = ()=>{
 };
 
 async function getAllApprovedRequest(){
-    const response = await fetch(`http:localhost:3000/api/v1/users/requests`, {
+    const response = await fetch(`https://tracky-maintenance-app.herokuapp.com/api/v1/users/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",

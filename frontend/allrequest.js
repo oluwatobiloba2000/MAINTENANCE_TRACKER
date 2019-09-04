@@ -21,6 +21,8 @@ const checkToken = ()=>{
   window.location.href = '../signin.html';
 };
 
+let path = `https://tracky-maintenance-app.herokuapp.com`;
+
 const submitForm = document.getElementById("submit").addEventListener("click", async (e) => {
   e.preventDefault();
   //getting the inputs form the user
@@ -32,7 +34,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
         setTimeout(()=>{errorInputModal.classList.remove('error-modal-open')} , 3000);
   } else {
     const requestBody = {title : title, category : postCategory, description : postDescription}
-    const response = await fetch(`http:localhost:3000/api/v1/users/requests`, {
+    const response = await fetch(`${path}/api/v1/users/requests`, {
           method : "POST",
           body : JSON.stringify(requestBody),
           headers:{
@@ -70,7 +72,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
 });
 
 async function getAllRequest(){
-    const response = await fetch(`http:localhost:3000/api/v1/users/requests`, {
+    const response = await fetch(`${path}/api/v1/users/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
@@ -104,7 +106,7 @@ async function getAllRequest(){
 }
 
 async function edit(id){
- const response = await fetch(`http:localhost:3000/api/v1/users/requests/${id}`, {
+ const response = await fetch(`${path}/api/v1/users/requests/${id}`, {
   method : "PUT",
   headers:{
     "content-type" : "application/json",
@@ -132,7 +134,7 @@ async function save(id){
       setTimeout(()=>{location.reload()} , 3000);
 } else {
   const requestBody = {title : title, description : description}
-  const response = await fetch(`http:localhost:3000/api/v1/users/requests/${id}`, {
+  const response = await fetch(`${path}/api/v1/users/requests/${id}`, {
         method : "PUT",
         body : JSON.stringify(requestBody),
         headers:{

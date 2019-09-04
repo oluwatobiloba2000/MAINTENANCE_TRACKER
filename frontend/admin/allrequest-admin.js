@@ -20,9 +20,9 @@ const checkToken = ()=>{
     }
     window.location.href = '../signin.html';
   };
-
+  let herokuAdminPath = `https://tracky-maintenance-app.herokuapp.com`;
 async function getAllRequest(){
-    const response = await fetch(`http:localhost:3000/api/v1/requests`, {
+    const response = await fetch(`${herokuAdminPath}/api/v1/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
@@ -61,7 +61,7 @@ function error(){
     setTimeout(()=>{success.style.transform = 'translateY(-57px)'} , 3000);
 }
 async function approve(id){
-    const response = await fetch(`http:localhost:3000/api/v1/requests/${id}/approve`, {
+    const response = await fetch(`${herokuAdminPath}/api/v1/requests/${id}/approve`, {
         method : "PUT",
         headers:{
           "content-type" : "application/json",
@@ -84,7 +84,7 @@ async function approve(id){
 }
 
 async function resolve(id){
-    const response = await fetch(`http:localhost:3000/api/v1/requests/${id}/resolve`, {
+    const response = await fetch(`${herokuAdminPath}/api/v1/requests/${id}/resolve`, {
         method : "PUT",
         headers:{
           "content-type" : "application/json",
@@ -106,7 +106,7 @@ async function resolve(id){
 }
 
 async function disapprove(id){
-    const response = await fetch(`http:localhost:3000/api/v1/requests/${id}/disapprove`, {
+    const response = await fetch(`${herokuAdminPath}/api/v1/requests/${id}/disapprove`, {
         method : "PUT",
         headers:{
           "content-type" : "application/json",

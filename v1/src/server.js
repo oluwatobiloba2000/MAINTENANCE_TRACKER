@@ -1,3 +1,6 @@
+// path
+import path from 'path';
+
 // import express
 import express from "express";
 
@@ -38,13 +41,17 @@ app.use((req, res, next) => {
   next();
 })
 
-
-
 app.use(appRouter);
 
 
 // declear a port to run on
 const PORT = process.env.PORT || 3000;
+
+
+// configure path to load html files
+const frontend = path.join(__dirname, '../../UI');
+
+app.use(express.static(frontend));
 
 // start the server
 app.listen(PORT, () => {

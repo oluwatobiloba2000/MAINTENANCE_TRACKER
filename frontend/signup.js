@@ -7,7 +7,6 @@ function load(){
     loader = setTimeout(showPage, 1000);
 }
 
-
 function showPage() {
     backgroundLoader.classList.remove('background-loader');
   document.getElementById("loader").style.display = "none";
@@ -18,7 +17,7 @@ const signupBtn = document.getElementById("sign_up_button").addEventListener('cl
     let password = document.getElementById('password').value;
 
     const signupBody = {username : username, password : password};
-    const response  = await fetch(`http:localhost:3000/auth/signup` , {
+    const response  = await fetch(`https://tracky-maintenance-app.herokuapp.com/auth/signup` , {
         method: "POST",
         body: JSON.stringify(signupBody),
         headers:{

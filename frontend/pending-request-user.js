@@ -6,8 +6,10 @@ const checkToken = ()=>{
     window.location.href = '../signin.html';
 };
 
+let path = `https://tracky-maintenance-app.herokuapp.com`;
+
 async function getAllPendingRequest(){
-    const response = await fetch(`http:localhost:3000/api/v1/users/requests`, {
+    const response = await fetch(`${path}/api/v1/users/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
