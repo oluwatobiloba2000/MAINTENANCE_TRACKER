@@ -23,6 +23,8 @@ function load(){
     loader = setTimeout(showPage, 1000);
 }
 
+let path = `https://tracky-maintenance-app.herokuapp.com`;
+
 
 function showPage() {
     backgroundLoader.classList.remove('background-loader');
@@ -34,7 +36,7 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const signinBody = {username: username, password: password}
-    const response = await fetch(`http:localhost:3000/auth/login`, {
+    const response = await fetch(`${path}/auth/login`, {
         method: "POST",
         body: JSON.stringify(signinBody),
         headers:{
@@ -44,7 +46,7 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
     .then(res => res.json())
     .then(response => response)
     .catch(e => e);
-
+    console.log(response)
     if(response === "Username and password are required"){
         errorDisplay.innerHTML = `<p>Username and password required</p>`
         errorDisplay.classList.add('user-red');
