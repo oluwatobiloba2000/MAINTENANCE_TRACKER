@@ -86,7 +86,7 @@ async function getAllRequest(){
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../signin.html'
+            window.location.href = '../HTML/signin.html'
         }, 3000)
       }else{
             // making a request
