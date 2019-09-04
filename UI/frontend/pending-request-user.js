@@ -3,7 +3,7 @@ const checkToken = ()=>{
     if(token){
       return token;
     }
-    window.location.href = '../signin.html';
+    window.location.href = '../HTML/signin.html';
 };
 
 let path = `https://tracky-maintenance-app.herokuapp.com`;
@@ -28,7 +28,7 @@ async function getAllPendingRequest(){
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../signin.html'
+            window.location.href = '../HTML/signin.html'
         }, 3000)
       }else if(response.length !== 0){
         //   filter approved request

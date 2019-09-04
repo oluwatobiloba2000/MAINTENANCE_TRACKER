@@ -3,7 +3,7 @@ const checkToken = ()=>{
     if(token){
       return token;
     }
-    window.location.href = '../signin.html';
+    window.location.href = '../../HTML/signin.html';
 };
 
 async function getAllApprovedRequest(){
@@ -23,7 +23,7 @@ async function getAllApprovedRequest(){
       if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../signin.html'
+            window.location.href = '../../HTML/signin.html'
         }, 3000)
       }
         //   filter approved request

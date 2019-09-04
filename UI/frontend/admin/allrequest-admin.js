@@ -18,8 +18,9 @@ const checkToken = ()=>{
     if(token){
       return token;
     }
-    window.location.href = '../signin.html';
+    window.location.href = '../../HTML/signin.html';
   };
+
   let herokuAdminPath = `https://tracky-maintenance-app.herokuapp.com`;
 async function getAllRequest(){
     const response = await fetch(`${herokuAdminPath}/api/v1/requests`, {
@@ -35,7 +36,7 @@ async function getAllRequest(){
        if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../signin.html'
+            window.location.href = '../../HTML/signin.html'
         }, 3000)
       }else{
             // making a request
@@ -71,7 +72,7 @@ async function approve(id){
         .then(response => response)
         .catch(e => e)
         if(response["message"] === 'jwt expired'){
-                window.location.href = '../signin.html'
+                window.location.href = '../../HTML/signin.html'
         }else if(response["message"] === 'Request can only be approved when they are pending'){
             document.querySelector('.success').innerHTML =  `<p>Request can only be approved when they are pending</p>`
            return error();
@@ -94,7 +95,7 @@ async function resolve(id){
         .then(response => response)
         .catch(e => e)
         if(response["message"] === 'jwt expired'){
-                window.location.href = '../signin.html'
+                window.location.href = '../../HTML/signin.html'
         }else if(response["message"] === 'Request has been resolved'){
             document.querySelector('.success').innerHTML =  `<p>Request has been resovled</p>`
            return error();
@@ -116,7 +117,7 @@ async function disapprove(id){
         .then(response => response)
         .catch(e => e)
         if(response["message"] === 'jwt expired'){
-                window.location.href = '../signin.html'
+                window.location.href = '../../HTML/signin.html'
         }else if(response["message"] === 'Request has been resolved'){
             document.querySelector('.success').innerHTML =  `<p>Request has been resovled</p>`
            return error();

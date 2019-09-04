@@ -7,7 +7,6 @@ function load(){
     loader = setTimeout(showPage, 1000);
 }
 
-
 function showPage() {
     backgroundLoader.classList.remove('background-loader');
   document.getElementById("loader").style.display = "none";
@@ -18,7 +17,7 @@ const checkToken = ()=>{
   if(token){
     return token;
   }
-  window.location.href = '../signin.html';
+  window.location.href = '../HTML/signin.html';
 };
 
 let path = `https://tracky-maintenance-app.herokuapp.com`;
