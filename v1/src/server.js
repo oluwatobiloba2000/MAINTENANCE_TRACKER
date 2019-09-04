@@ -29,6 +29,17 @@ app.use(bodyParser.json({
 }));
 
 
+app.use((req, res, next) => {
+     // allow all routes
+   res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // allow methods
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+
+    // allow request headers
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+})
 // configure path to load html files
 const frontend = path.join(__dirname, '../../UI');
 
