@@ -61,7 +61,7 @@ class RequestControllers {
                     });
                 }
                 try {
-                    const query = "INSERT INTO request(title, category, description, time) VALUES($1, $2, $3, NOW()) RETURNING *";
+                    const query = `INSERT INTO request(title, category, description, time) VALUES($1, $2, $3, CURRENT_DATE) RETURNING *`;
                     const value = [title, category, description];
                     const newRequest = await pool.query(query, value);
                     return res.json({
@@ -193,18 +193,23 @@ static allRequestsAdmin(req, res) {
                       return res.status(404).json("Cannot resolve request");
                   }
                   const result = request.rows[0];
-                  const title = result.title;
-                  const category = result.category;
-                  const description = result.description;
-                  const time = result.time;
-                  const status = "Resolved"
-                  const query =
-                    "UPDATE request SET title=$1, category=$2, description=$3, time=$4, status=$5 WHERE id=$6 RETURNING *";
-                  const values = [title, category, description, time, status, id];
-                  const resolvedRequest = await pool.query(query, values);
-                  return res.json({
-                    message: "request resolved successfully",
-                    request: resolvedRequest.rows
+                  if(result.status == 'Resolved'){
+                    return res.json({
+                        message : "Request has been resolved"
+                     })
+                  }
+                      const title = result.title;
+                      const category = result.category;
+                      const description = result.description;
+                      const time = result.time;
+                      const status = "Resolved"
+                      const query =
+                        "UPDATE request SET title=$1, category=$2, description=$3, time=$4, status=$5 WHERE id=$6 RETURNING *";
+                      const values = [title, category, description, time, status, id];
+                      const resolvedRequest = await pool.query(query, values);
+                      return res.json({
+                        message: "request resolved successfully",
+                        request: resolvedRequest.rows
                   });
                 } catch (e) {
                   return res.status(400).send({

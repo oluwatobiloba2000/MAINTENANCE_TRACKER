@@ -20,7 +20,7 @@ const requestTable = async () =>{
                title VARCHAR(128) NOT NULL,
                category VARCHAR(100) NOT NULL,
                description VARCHAR(6000) NOT NULL,
-               time VARCHAR(100) NOT NULL,
+               time VARCHAR(128) NOT NULL,
                status VARCHAR(120) DEFAULT 'pending' )`;
             try {
              await pool.query(queryRequest);
@@ -44,16 +44,18 @@ const userTable = async () =>{
     }
 };
 const dropTable = async () => {
-    try {
-      const query = "DROP TABLE IF EXISTS userTable";
-      await pool.query(query);
-      console.log("Table dropped");
-    } catch (e) {
-      pool.end();
-    }
-  };
+  try {
+    const query = "DROP TABLE IF EXISTS request";
+    await pool.query(query);
+    console.log("Table dropped");
+  } catch (e) {
+    pool.end();
+  }
+};
+// createTable();
+// dropTable();
 //   createTable();
-//   dropTable();
+  // dropTable();
 
 userTable();
 requestTable();
