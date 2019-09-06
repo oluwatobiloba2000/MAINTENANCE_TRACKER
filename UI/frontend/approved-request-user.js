@@ -6,8 +6,8 @@ const checkToken = ()=>{
     window.location.href = '../HTML/signin.html';
 };
 
-// let path = `https://tracky-maintenance-app.herokuapp.com`;
-let path = `http://localhost:3000`;
+let path = `https://maintenance-tracky-api.herokuapp.com`;
+// let path = `http://localhost:3000`;
 const userId = window.localStorage.getItem('userId');
 const userName = window.localStorage.getItem('user-name');
 
