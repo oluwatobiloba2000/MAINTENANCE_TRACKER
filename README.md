@@ -19,6 +19,9 @@ Tracky is an application that provides users with the ability to reach out to op
 * Any browser preferably Google Chrome
 * Postman
 
+## Link to heroku app ##
+    https://maintenance-app-tracky.herokuapp.com
+
 ## Link to Github pages ##
     https://oluwatobiloba2000.github.io/MAINTENANCE_TRACKER/
 
