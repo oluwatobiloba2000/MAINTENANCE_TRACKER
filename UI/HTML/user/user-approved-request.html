@@ -35,7 +35,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-                <i class="far fa-user"></i><span class="username-update"> user</span>
+                <i class="far fa-user"> </i>&nbsp;<span class="username-update"> user</span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -57,10 +57,6 @@
                     <a href="../user/user-pending-request.html"><i class="far fa-clock"></i> Pending requests</a>
                     <hr class="divider">
                 </li>
-                <!-- <li class="navbar-list">
-                    <a id="request-btn" href="javascript:void(0)"><i class="far fa-clipboard"></i> Create a new request</a>
-                    <hr class="divider">
-                </li> -->
             </ul>
             <ul class="navbar-sublist">
                 <li id="log-out" class="navbar-list hover-red">
@@ -68,11 +64,14 @@
                 </li>
                 <br>
                 <div class="container-user-name">
-                    <li class="navbar-list">
-                        <i class="far fa-user"></i> Logged in as <span class="username-update">User</span>
+                    <li title="current user" class="navbar-list">
+                      <i class="far fa-user"></i> Logged in as <span id="username-update">User                  
+                 </span>
+                 (<span title="Network status" class="networkerror status error-transition">
+                     <span class="i"></span>
+                   </span>)
                     </li>
                 </div>
-
             </ul>
 
         </nav>
@@ -135,6 +134,7 @@
     </div>
     <script src="../../UI ELEMENTS/user-index.js"></script>
     <script src="../../frontend/approved-request-user.js"></script>
+    <script src="../../UI ELEMENTS/networkerror.js"></script>
     <script src="../../frontend/logout.js"></script>
 </body>
 

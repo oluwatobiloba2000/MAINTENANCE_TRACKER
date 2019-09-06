@@ -40,7 +40,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-                <i class="far fa-user"></i><span class="username-update"> user</span>
+            <i class="far fa-user"> </i>&nbsp;<span class="username-update"> user</span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -75,16 +75,15 @@
                 <br>
                 <div class="container-user-name">
                     <li title="current user" class="navbar-list">
-                        <i class="far fa-user"></i> Logged in as <span class="username-update">User</span>
+                      <i class="far fa-user"></i> Logged in as <span id="username-update">User                  
+                 </span>
+                 <span title="Network status" class="networkerror status error-transition">
+                     <span class="i"></span>
+                   </span>
                     </li>
                 </div>
                     </li>
                 </div>
-                <!-- <li class="navbar-list">
-                        <div title="Network status" class="networkerror status error-transition">
-                         <div class="i"></div>
-                       </div>
-                </li> -->
             </ul>
 
         </nav>
@@ -147,15 +146,16 @@
                 <!--modal content ends-->
             </div>
     </main>
+    <span class="right_nav"></span>
+    <span class="nav-1"></span>
+    <span class="nav-2"></span>
     <!-- css loader div -->
     <div id="bars-icon"></div>
     <div class="loader-back background-loader">
         <div id="loader"></div>
     </div>
     <!-- css loader div ends -->
-    <div title="Network status" class="networkerror status error-transition">
-        <div class="i"></div>
-    </div>
+
 
     <script src="../../UI ELEMENTS/user-index.js"></script>
     <script src="../../frontend/allrequest.js"></script>

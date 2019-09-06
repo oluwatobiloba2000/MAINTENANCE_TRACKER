@@ -6,8 +6,11 @@ const checkToken = ()=>{
     window.location.href = '../../HTML/signin.html';
 };
 
+// let herokuAdminPath = `https://tracky-maintenance-app.herokuapp.com`;
+let herokuAdminPath = `http://localhost:3000`;
+
 async function getAllApprovedRequest(){
-    const response = await fetch(`https://tracky-maintenance-app.herokuapp.com/api/v1/requests`, {
+    const response = await fetch(`${herokuAdminPath}/api/v1/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
@@ -28,7 +31,7 @@ async function getAllApprovedRequest(){
       }
         //   filter approved request
     approvedRequest.forEach(requests => {
-       cardBody.innerHTML += `<div class="requests"><p class="request-title">${requests.title}</p>
+       cardBody.innerHTML += `<div class="requests"><p class="request-title">${requests.title} <span style="float: right">From ${requests.userName}</span></p>
       <p class="request-time">Date : ${requests.time}</p>
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${requests.category}</p>

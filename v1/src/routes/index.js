@@ -19,7 +19,7 @@ appRouter.post('/auth/signup', Authentication.signUp);
 appRouter.post('/auth/login', Authentication.logInAuthUser);
 
 //  sending a get request[only for users]
-appRouter.get('/api/v1/users/requests', checkToken , requestControllers.allRequests);
+appRouter.get('/api/v1/:userId/requests', checkToken , requestControllers.allRequests);
 
 //  sending a get request for admin[only admin has access to this]
 appRouter.get('/api/v1/requests', checkToken , requestControllers.allRequestsAdmin);

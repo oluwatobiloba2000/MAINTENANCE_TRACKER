@@ -5,16 +5,22 @@ import app from "../server";
 //configure chai to use chai-http
 chai.use(chaiHttp);
 chai.should();
+let token = 0;
 
-describe("requests", () => {
-    describe("GET /api/v1/users/requests", () => {
-        //GETING ALL REQUESTS
-        it('should be able to get all requests', (done) => {
+describe("signin", () => {
+    describe("POST /auth/login", () => {
+        //SIGNING IN USERS
+        it('it should be able to sign in a user', (done) => {
+            const user = {
+                username : tobby,
+                password : 1234
+            }
             chai.request(app)
-                .get('/api/v1/users/requests')
+                .post('/auth/login')
+                .send(user)
                 .end((err, res) => {
                     res.should.have.a.status(200)
-                    res.body.should.be.a('array');
+                    
                     done();
                 });
         });

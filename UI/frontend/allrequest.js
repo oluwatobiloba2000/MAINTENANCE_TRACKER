@@ -20,7 +20,11 @@ const checkToken = ()=>{
   window.location.href = '../signin.html';
 };
 
-let path = `https://tracky-maintenance-app.herokuapp.com`;
+const userId = window.localStorage.getItem('userId');
+const userName = window.localStorage.getItem('user-name');
+
+// let path = `https://tracky-maintenance-app.herokuapp.com`;
+let path = `http://localhost:3000`;
 
 const submitForm = document.getElementById("submit").addEventListener("click", async (e) => {
   e.preventDefault();
@@ -32,7 +36,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
       errorInputModal.classList.add('error-modal-open');
         setTimeout(()=>{errorInputModal.classList.remove('error-modal-open')} , 3000);
   } else {
-    const requestBody = {title : title, category : postCategory, description : postDescription}
+    const requestBody = {title : title, category : postCategory, description : postDescription, userId : userId, userName : userName}
     const response = await fetch(`${path}/api/v1/users/requests`, {
           method : "POST",
           body : JSON.stringify(requestBody),
@@ -71,7 +75,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
 });
 
 async function getAllRequest(){
-    const response = await fetch(`${path}/api/v1/users/requests`, {
+    const response = await fetch(`${path}/api/v1/${userId}/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
@@ -81,11 +85,13 @@ async function getAllRequest(){
       .then(response => response)
       .catch(e => e)
       let cardBody = document.querySelector("#card");
+    document.querySelector('.username-update').innerText = `${userName}`
+    document.getElementById('username-update').innerText = `${userName}`
       if(response === 'NO REQUEST'){
-        document.querySelector('.grey-text').classList.add('grey-text-show');
+       return document.querySelector('.grey-text').classList.add('grey-text-show');
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
-        setTimeout(()=>{
+        return setTimeout(()=>{
             window.location.href = '../signin.html'
         }, 3000)
       }else{

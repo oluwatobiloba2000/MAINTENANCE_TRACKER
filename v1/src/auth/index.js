@@ -39,8 +39,9 @@ class Authentication {
             }else{
                 return res.status(200).json({
                     message: "sign in user success",
-                    user: checkUserName.rows,
+                    user: returnedUsername.rows[0]["username"],
                     Hashmatch : match,
+                    userId : returnedUsername.rows[0]["userid"],
                     usertoken : token
                 })
      }
@@ -91,7 +92,8 @@ class Authentication {
                     }else{
                         return res.status(200).json({
                             message: "sign up success",
-                            user: signedUser.rows,
+                            user: signedUser.rows[0]["username"],
+                            userId : signedUser.rows[0]["userid"],
                             passphase,
                             usertoken : token
                         })

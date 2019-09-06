@@ -28,12 +28,15 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
 }
 
+// let path = `https://tracky-maintenance-app.herokuapp.com`;
+let path = `http://localhost:3000`;
+
 document.getElementById('sign_in_button').addEventListener('click' , async (e)=>{
     e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const signinBody = {username: username, password: password}
-    const response = await fetch(`https://tracky-maintenance-app.herokuapp.com/auth/login`, {
+    const response = await fetch(`${path}/auth/login`, {
         method: "POST",
         body: JSON.stringify(signinBody),
         headers:{
@@ -43,17 +46,22 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
     .then(res => res.json())
     .then(response => response)
     .catch(e => e);
-    console.log(response)
     if(response === "Username and password are required"){
         errorDisplay.innerHTML = `<p>Username and password required</p>`
         errorDisplay.classList.add('user-red');
-    }else if(response === 'incorrect username or password' || response === 'username does not exist on our server'){
+    }else if(response === 'incorrect username or password'){
         errorDisplay.innerHTML = `<p><i class="fas fa-exclamation-triangle"></i> Incorrect username or password</p>`
+        errorDisplay.classList.add('user-red');   
+    }else if(response === 'username does not exist on our server'){
+        errorDisplay.innerHTML = `<p><i class="fas fa-exclamation-triangle"></i> Username does not exist</p>`
         errorDisplay.classList.add('user-red');
-    }else if(response["message"] === 'sign in user success'){
+    }
+    else if(response["message"] === 'sign in user success'){
         errorDisplay.innerHTML = `<p>Login success, please wait you will be redirected in few seconds ......</p>`
         errorDisplay.classList.add('user-green');
         window.localStorage.setItem('user-token' , response["usertoken"]);
+        window.localStorage.setItem('userId', response["userId"]);
+        window.localStorage.setItem('user-name', response["user"])
          setTimeout(()=>{
           window.location.href = "../HTML/user/user-index.html";
             errorDisplay.classList.remove('user-green');

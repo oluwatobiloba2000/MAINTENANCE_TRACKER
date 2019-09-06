@@ -3,13 +3,17 @@ const checkToken = ()=>{
     if(token){
       return token;
     }
-    window.location.href = '../HTML/signin.html';
+    window.location.href = '../signin.html';
 };
 
-let path = `https://tracky-maintenance-app.herokuapp.com`;
+// let path = `https://tracky-maintenance-app.herokuapp.com`;
+let path = `http://localhost:3000`;
+
+const userId = window.localStorage.getItem('userId');
+const userName = window.localStorage.getItem('user-name')
 
 async function getAllPendingRequest(){
-    const response = await fetch(`${path}/api/v1/users/requests`, {
+    const response = await fetch(`${path}/api/v1/${userId}/requests`, {
       method : "GET",
       headers:{
         "content-type" : "application/json",
@@ -19,6 +23,8 @@ async function getAllPendingRequest(){
       .then(response => response)
       .catch(e => e)
       let cardBody = document.querySelector("#card");
+          document.querySelector('.username-update').innerText = `${userName}`
+        document.getElementById('username-update').innerText = `${userName}`
       let pendingRequest = response.request.filter((e)=>{
         return e.status == "pending"
       })
@@ -28,12 +34,12 @@ async function getAllPendingRequest(){
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../HTML/signin.html'
+            window.location.href = '../signin.html'
         }, 3000)
       }else if(response.length !== 0){
         //   filter approved request
     pendingRequest.forEach(requests => {
-       cardBody.innerHTML +=`<div class="requests"><p contenteditable style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${requests.title}</p>
+       cardBody.innerHTML +=`<div class="requests"><p style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${requests.title}</p>
       <p style="float : right; background-color: #A5BE00; padding: 0.4%;">${requests.time}</p>
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${requests.category}</p>

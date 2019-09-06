@@ -17,7 +17,7 @@ const signupBtn = document.getElementById("sign_up_button").addEventListener('cl
     let password = document.getElementById('password').value;
 
     const signupBody = {username : username, password : password};
-    const response  = await fetch(`https://tracky-maintenance-app.herokuapp.com/auth/signup` , {
+    const response  = await fetch(`http://localhost:3000/auth/signup` , {
         method: "POST",
         body: JSON.stringify(signupBody),
         headers:{
@@ -37,6 +37,8 @@ const signupBtn = document.getElementById("sign_up_button").addEventListener('cl
             errorDisplay.innerHTML = `<p>success</p>`
             errorDisplay.classList.add('user-green');
             window.localStorage.setItem('user-token' , response["usertoken"]);
+            window.localStorage.setItem('userId', response["userId"]);
+            window.localStorage.setItem('user-name', response["user"])
            return  setTimeout(()=>{ window.location.href = '../HTML/user/user-index.html'}, 1000)
         }else{
             errorDisplay.innerHTML = `<p>something unexpected happened</p>`

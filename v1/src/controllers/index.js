@@ -7,13 +7,15 @@ class RequestControllers {
 
     // getting all requests
     static allRequests(req, res) {
+        const userId = req.params.userId;
         jwt.verify(req.token, process.env.KEY , async (err, authorizedData) => {
             if (err) {
                 res.json(err);
             } else {
                 try {
-                    const query = "SELECT * FROM request"
-                    const requests = await pool.query(query);
+                    const query = "SELECT * FROM request WHERE userId=$1"
+                    const value = [userId]
+                    const requests = await pool.query(query, value);
                     if (!requests.rows.length) return res.status(200).send("NO REQUEST");
                     return res.status(200).json({
                         request: requests.rows
@@ -52,6 +54,8 @@ class RequestControllers {
             if (err) {
                 res.json(err)
             } else {
+                const userId = req.body.userId;
+                const userName = req.body.userName;
                 const title = req.body.title;
                 const category = req.body.category;
                 const description = req.body.description;
@@ -61,8 +65,8 @@ class RequestControllers {
                     });
                 }
                 try {
-                    const query = `INSERT INTO request(title, category, description, time) VALUES($1, $2, $3, CURRENT_DATE) RETURNING *`;
-                    const value = [title, category, description];
+                    const query = `INSERT INTO request(title, category, description, time, userId, userName) VALUES($1, $2, $3, CURRENT_DATE, $4, $5) RETURNING *`;
+                    const value = [title, category, description, userId, userName];
                     const newRequest = await pool.query(query, value);
                     return res.json({
                         message: `request posted !`,

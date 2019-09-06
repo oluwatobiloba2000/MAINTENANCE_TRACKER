@@ -21,7 +21,9 @@ const requestTable = async () =>{
                category VARCHAR(100) NOT NULL,
                description VARCHAR(6000) NOT NULL,
                time VARCHAR(128) NOT NULL,
-               status VARCHAR(120) DEFAULT 'pending' )`;
+               status VARCHAR(120) DEFAULT 'pending',
+               userId INT NOT NULL,
+               userName VARCHAR(128) NOT NULL)`;
             try {
              await pool.query(queryRequest);
             console.log('request table created !!')
@@ -32,7 +34,7 @@ const requestTable = async () =>{
 
 const userTable = async () =>{
     const queryUser = `CREATE TABLE IF NOT EXISTS
-    users(id SERIAL PRIMARY KEY,
+    users(userId SERIAL PRIMARY KEY,
         username VARCHAR(128) NOT NULL,
         password VARCHAR(128) NOT NULL
         )`;
@@ -45,7 +47,7 @@ const userTable = async () =>{
 };
 const dropTable = async () => {
   try {
-    const query = "DROP TABLE IF EXISTS request";
+    const query = "DROP TABLE IF EXISTS users";
     await pool.query(query);
     console.log("Table dropped");
   } catch (e) {
@@ -54,7 +56,7 @@ const dropTable = async () => {
 };
 // createTable();
 // dropTable();
-//   createTable();
+  // createTable();
   // dropTable();
 
 userTable();
