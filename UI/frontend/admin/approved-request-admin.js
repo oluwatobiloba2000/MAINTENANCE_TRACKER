@@ -31,7 +31,7 @@ async function getAllApprovedRequest(){
       }
         //   filter approved request
     approvedRequest.forEach(requests => {
-       cardBody.innerHTML += `<div class="requests"><p class="request-title">${requests.title} <span style="float: right">From ${requests.userName}</span></p>
+       cardBody.innerHTML += `<div class="requests"><p class="request-title">${requests.title} <span style="float: right">From ${requests.username}</span></p>
       <p class="request-time">Date : ${requests.time}</p>
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${requests.category}</p>
