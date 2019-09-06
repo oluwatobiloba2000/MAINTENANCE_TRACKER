@@ -16,7 +16,7 @@ describe("signin", () => {
             }
             chai.request(app)
                 .post('/auth/login')
-                .send(user)
+                .send(user)  
                 .end((err, res) => {
                     res.should.have.a.status(200)
                     
