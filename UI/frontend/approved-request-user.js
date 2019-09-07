@@ -6,8 +6,8 @@ const checkToken = ()=>{
     window.location.href = '../HTML/signin.html';
 };
 
-let path = `https://maintenance-tracky-api.herokuapp.com`;
-// let path = `http://localhost:3000`;
+// let path = `https://maintenance-tracky-api.herokuapp.com`;
+let path = `http://localhost:3000`;
 const userId = window.localStorage.getItem('userId');
 const userName = window.localStorage.getItem('user-name');
 
@@ -40,7 +40,7 @@ async function getAllApprovedRequest(){
       <br>
       <p>&nbsp;<i class="fas fa-tools"></i> ${requests.category}</p>
       <p class="request-description">${requests.description}</p>
-      <p class="request-status">${requests.status}</p></div>`
+      <p class="request-status"><span class="request-status-right">${requests.status}</span></div>`
     });
 
     document.getElementById('number-of-request').innerText = `${approvedRequest.length}`;

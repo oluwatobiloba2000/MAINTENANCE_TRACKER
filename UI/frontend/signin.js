@@ -28,8 +28,8 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
 }
 
-let path = `https://maintenance-tracky-api.herokuapp.com`;
-// let path = `http://localhost:3000`;
+// let path = `https://maintenance-tracky-api.herokuapp.com`;
+let path = `http://localhost:3000`;
 
 document.getElementById('sign_in_button').addEventListener('click' , async (e)=>{
     e.preventDefault();

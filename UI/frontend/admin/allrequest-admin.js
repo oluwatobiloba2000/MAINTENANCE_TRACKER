@@ -21,8 +21,8 @@ const checkToken = ()=>{
     window.location.href = '../../HTML/signin.html';
   };
 
-  let herokuAdminPath = `https://maintenance-tracky-api.herokuapp.com`;
-  // let herokuAdminPath = `http://localhost:3000`;
+  // let herokuAdminPath = `https://maintenance-tracky-api.herokuapp.com`;
+  let herokuAdminPath = `http://localhost:3000`;
 async function getAllRequest(){
     const response = await fetch(`${herokuAdminPath}/api/v1/requests`, {
       method : "GET",
@@ -50,7 +50,7 @@ async function getAllRequest(){
       <p class="request-status">
       <button title="Approve request" class="request-edit-button" onClick="approve(${requests.id})">Approve</button>
       <button title="Resolve request" class="request-save-button save-${requests.id}" onClick="resolve(${requests.id})">Resolve</button>
-      <button title="Disapprove request" class="request-cancel-button cancel-${requests.id}" onClick="disapprove(${requests.id})">Disapprove <i class="far fa-times-circle"></i></button>${requests.status}</p></div>`
+      <button title="Disapprove request" class="request-cancel-button cancel-${requests.id}" onClick="disapprove(${requests.id})">Disapprove <i class="far fa-times-circle"></i></button><span class="request-status-right">${requests.status}</span></p></div>`
     });
     document.getElementById('number-of-request').innerText = `${response.request.length}`;
       }

@@ -6,8 +6,8 @@ const checkToken = ()=>{
     window.location.href = '../signin.html';
 };
 
-let path = `https://maintenance-tracky-api.herokuapp.com`;
-// let path = `http://localhost:3000`;
+// let path = `https://maintenance-tracky-api.herokuapp.com`;
+let path = `http://localhost:3000`;
 
 const userId = window.localStorage.getItem('userId');
 const userName = window.localStorage.getItem('user-name')
@@ -45,7 +45,7 @@ async function getAllPendingRequest(){
       <p>&nbsp;<i class="fas fa-tools"></i> ${requests.category}</p>
       <p style="padding : 3px;border : 1px solid green">${requests.description}</p>
       <p style="margin-right: 3px;
-      text-align: right;">${requests.status}</p></div>`
+      text-align: right;"><span class="request-status-right">${requests.status}</span></div>`
     });
     document.getElementById('number-of-request').innerText = `${pendingRequest.length}`;
 }}

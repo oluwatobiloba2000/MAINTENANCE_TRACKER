@@ -23,8 +23,8 @@ const checkToken = ()=>{
 const userId = window.localStorage.getItem('userId');
 const userName = window.localStorage.getItem('user-name');
 
-let path = `https://maintenance-tracky-api.herokuapp.com`;
-// let path = `http://localhost:3000`;
+// let path = `https://maintenance-tracky-api.herokuapp.com`;
+let path = `http://localhost:3000`;
 
 const submitForm = document.getElementById("submit").addEventListener("click", async (e) => {
   e.preventDefault();
@@ -59,7 +59,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
     <p class="request-status">
     <button class="request-edit-button" onClick="edit(${e.id})">Edit</button>
     <button class="request-save-button save-${e.id}" style="display : none" onClick="save(${e.id})">Save</button>
-    <button class="request-cancel-button cancel-${e.id}" style="display : none" onClick="cancel(${e.id})">Cancel</button>${e.status}</p>`
+    <button class="request-cancel-button cancel-${e.id}" style="display : none" onClick="cancel(${e.id})">Cancel</button><span class="request-status-right">${e.status}</span></p>`
   });
 
   cardBody.insertAdjacentElement('beforebegin', newDiv);
@@ -104,7 +104,10 @@ async function getAllRequest(){
       <p class="request-description description-${requests.id}">${requests.description}</p>
       <p class="request-status">
       <button class="request-edit-button" onClick="edit(${requests.id})">Edit</button>
-      <button class="request-save-button save-${requests.id}" style="display : none" onClick="save(${requests.id})">Save</button><button class="request-cancel-button cancel-${requests.id}" style="display : none" onClick="cancel(${requests.id})">Cancel</button>${requests.status}</p></div>`
+      <button class="request-save-button save-${requests.id}" style="display : none" onClick="save(${requests.id})">Save</button>
+      <button class="request-cancel-button cancel-${requests.id}" style="display : none" onClick="cancel(${requests.id})">Cancel</button>
+      <button class="request-delete-button" onClick="deleteRequest(${requests.id})">Delete <i class="fas fa-times"></i></button>
+      <span class="request-status-right">${requests.status}</span></p></div>`
     });
     document.getElementById('number-of-request').innerText = `${response.request.length}`;
       }
@@ -158,7 +161,7 @@ response.request.forEach(e => {
   <p>&nbsp;<i class="fas fa-tools"></i> ${e.category}</p>
   <p style="padding : 3px;border : 1px solid green">${e.description}</p>
   <p style="margin-right: 3px;
-  text-align: right;">${e.status}</p></div>`
+  text-align: right;"><span class="request-status-right">${e.status}</span></p></div>`
 });
  const success = document.querySelector('.success')
  success.innerHTML = `<p>success</p>`
@@ -192,4 +195,14 @@ function removeContenteditable(id){
   let editDescription = document.querySelector(`.description-${id}`);
   editDescription.setAttribute('contenteditable' , 'false');
   editDescription.classList.remove('edit-border');
+}
+
+function deleteRequest(id){
+    document.querySelector('.request-delete-modal').style.transform = 'translateY(0)';
+   document.querySelector('.btn-delete-yes').addEventListener('click', ()=>{
+    console.log('yes');
+    })
+    document.querySelector('.btn-delete-No').addEventListener('click', ()=>{
+      document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
+    })
 }

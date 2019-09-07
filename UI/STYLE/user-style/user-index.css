@@ -98,10 +98,10 @@ body {
     padding-left: 0;
 }
 
-.navbar-list {
-    /* margin-top: 1.5rem;
-    margin-bottom: 1.5rem; */
-}
+/* .navbar-list {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+} */
 
 .navbar-list a {
     text-decoration: none;
@@ -163,11 +163,12 @@ body {
     border-right: 3px solid green;
     border-left: 3px solid green;
     width: 99%;
+    border-radius: 10px;
+    transition: 0.3s ease 0.1s;
     min-height: 5em;
 }
 
 .requests:hover {
-    transition: 0.2s ease 0.3s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.561), 0 6px 20px 0 rgba(0, 0, 0, 0.513);
 }
 
@@ -432,6 +433,7 @@ body {
     color: #EBF2FA;
     cursor: pointer;
     height: 25px;
+    border-bottom-left-radius: 10px;
     border-top-right-radius: 15px;
     border: none;
     transition: 0.5s ease;
@@ -477,6 +479,27 @@ body {
     background-color: red;
     color: white;
 }
+.request-delete-button{
+    background-color: red;
+    outline: none;
+    width: 80px;
+    float: left;
+    margin-left: 10px;
+    color: #EBF2FA;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 25px;
+    border: none;
+    transition: 0.5s ease;
+}
+.request-delete-button:hover{
+    background-color: #e23737;
+    color: rgb(255, 254, 254);
+}
+.request-status-right{
+    background: rgba(5, 102, 141, 0.342);
+}
 .edit-border{
     transition: 1s ease;
     box-shadow : 0 2px 11px 0 rgba(255, 0, 0, 0.979), 0 2px 11px 0 rgba(255, 4, 4, 0.993);
@@ -499,6 +522,48 @@ body {
     margin-right: 3px;
     text-align: right;
 }
+
+.request-delete-modal{
+    position: fixed;
+    /* visibility: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.5s ease-in;
+    transform: translateY(-50em);
+    background-color: rgba(177, 177, 177, 0.609);
+    z-index: 10000;
+}
+.request-delete-modal-content{
+    width: 40%;
+    text-align: center;
+    height: auto;
+    border-radius: 10px;
+    background-color: #05668D;
+}
+.delete-btn{
+    width: 8em;
+    margin: 1em;
+    background-color: #A5BE00;
+    padding: 5px;
+    outline: none;
+    color: black;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.8s ease;
+}
+.delete-btn:hover{
+    color: #A5BE00;
+    background-color: rgb(0, 0, 0);
+}
+.delete-icon{
+    font-size: 5em;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -509,6 +574,9 @@ body {
     }
 }
 @media all and (max-width:900px) {
+    .request-delete-modal-content{
+        width: 80%;
+    }
     .grey-text{
         font-size: 2em;
     }
