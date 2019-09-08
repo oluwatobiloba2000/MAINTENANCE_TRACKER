@@ -42,6 +42,9 @@ appRouter.put('/api/v1/requests/:id/resolve', checkToken, requestControllers.res
 //disapprove a request[only admin has access to this]
 appRouter.put('/api/v1/requests/:id/disapprove', checkToken, requestControllers.disapproveRequest)
 
+//deleting a request[only for users]
+appRouter.delete('/api/v1/requests/:id', checkToken, requestControllers.deleteRequests)
+
 appRouter.get("*", (req, res) => {
     res.status(404).send(`<div style="height: 90vh; width: 100%; margin: 0px; display: flex; justify-content: center; align-items: center; flex-direction: column">
                     <h1 style="color: #05668D; font-size: 100px;">404</h1><h3>Page not found</h3></div>`);

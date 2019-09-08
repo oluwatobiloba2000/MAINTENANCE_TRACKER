@@ -47,6 +47,7 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
         }).then(res => res.json())
         .then(response => response)
           .catch(e => e)
+          document.querySelector('.grey-text').classList.remove('grey-text-show');
           // making a request
           const cardBody = document.querySelector("#card");
   const newDiv = document.createElement('div');
@@ -59,7 +60,8 @@ const submitForm = document.getElementById("submit").addEventListener("click", a
     <p class="request-status">
     <button class="request-edit-button" onClick="edit(${e.id})">Edit</button>
     <button class="request-save-button save-${e.id}" style="display : none" onClick="save(${e.id})">Save</button>
-    <button class="request-cancel-button cancel-${e.id}" style="display : none" onClick="cancel(${e.id})">Cancel</button><span class="request-status-right">${e.status}</span></p>`
+    <button class="request-cancel-button cancel-${e.id}" style="display : none" onClick="cancel(${e.id})">Cancel</button>
+    <button class="request-delete-button" onClick="deleteRequest(${e.id})">Delete <i class="fas fa-times"></i></button><span class="request-status-right">${e.status}</span></p>`
   });
 
   cardBody.insertAdjacentElement('beforebegin', newDiv);
@@ -87,7 +89,7 @@ async function getAllRequest(){
       let cardBody = document.querySelector("#card");
     document.querySelector('.username-update').innerText = `${userName}`
     document.getElementById('username-update').innerText = `${userName}`
-      if(response === 'NO REQUEST'){
+      if(response === 'NO REQUEST' || response == 'SyntaxError: Unexpected token N in JSON at position 0'){
        return document.querySelector('.grey-text').classList.add('grey-text-show');
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
@@ -96,6 +98,7 @@ async function getAllRequest(){
         }, 3000)
       }else{
             // making a request
+      document.querySelector('.grey-text').classList.remove('grey-text-show');
     response.request.forEach(requests => {
        cardBody.innerHTML += `<div class="requests"><p class="request-title title-${requests.id}">${requests.title}</p>
       <p class="request-time">Date : ${requests.time}</p>
@@ -197,12 +200,26 @@ function removeContenteditable(id){
   editDescription.classList.remove('edit-border');
 }
 
-function deleteRequest(id){
-    document.querySelector('.request-delete-modal').style.transform = 'translateY(0)';
-   document.querySelector('.btn-delete-yes').addEventListener('click', ()=>{
-    console.log('yes');
-    })
-    document.querySelector('.btn-delete-No').addEventListener('click', ()=>{
-      document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
-    })
-}
+async function deleteRequest(id){
+  let currentId = id
+  document.querySelector('.request-delete-modal').style.transform = 'translateY(0)'
+   document.querySelector('.btn-delete-yes').addEventListener('click', async()=>{
+          const response = await fetch(`${path}/api/v1/requests/${currentId}`, {
+      method : "DELETE",
+      headers:{
+        "content-type" : "application/json",
+        Authorization : `Bearer ${checkToken()}`
+      }
+    }).then(res => res.json())
+      .then(response => response)
+      .catch(e => e)
+      if(response == 'Request deleted successfully'){
+        document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
+        setTimeout(()=>{window.location.href = '../user/user-index.html'} , 1000);
+      }else{}
+  })
+  }
+  document.querySelector('.btn-delete-No').addEventListener('click', ()=>{
+    document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
+  })
+

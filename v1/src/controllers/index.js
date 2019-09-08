@@ -120,6 +120,28 @@ static updateRequest(req, res) {
     })
 }
 
+// DELETING REQUESTS
+static deleteRequests(req, res){
+    jwt.verify(req.token, process.env.KEY, async(err, authorizedData)=>{
+        if(err){
+            console.log(err);
+        }else{
+            const id = req.params.id;
+            try{
+              const query = `DELETE FROM request WHERE id=$1`
+              const value = [id];
+              const request = await pool.query(query, value);
+              if(!request.rowCount){
+                return  res.status(404).json("No request associated with this id");
+              }
+              return res.status(200).json("Request deleted successfully")
+            }catch(e){
+                console.log(e)
+            }
+        }
+    })
+}
+
 // GETTING ALL REQUEST FOR THE ADMIN
 static allRequestsAdmin(req, res) {
     jwt.verify(req.token, process.env.ADMINKEY, async (err, authorizedData) => {
