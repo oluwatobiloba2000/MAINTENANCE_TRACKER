@@ -87,7 +87,7 @@ async function getAllRequest(){
       .then(response => response)
       .catch(e => e)
       let cardBody = document.querySelector("#card");
-    document.querySelector('.username-update').innerText = `${userName}`
+    // document.querySelector('.username-update').innerText = `${userName}`
     document.getElementById('username-update').innerText = `${userName}`
       if(response === 'NO REQUEST' || response == 'SyntaxError: Unexpected token N in JSON at position 0'){
        return document.querySelector('.grey-text').classList.add('grey-text-show');
@@ -204,7 +204,7 @@ async function deleteRequest(id){
   let currentId = id
   document.querySelector('.request-delete-modal').style.transform = 'translateY(0)'
    document.querySelector('.btn-delete-yes').addEventListener('click', async()=>{
-          const response = await fetch(`${path}/api/v1/requests/${currentId}`, {
+      const response = await fetch(`${path}/api/v1/requests/${currentId}`, {
       method : "DELETE",
       headers:{
         "content-type" : "application/json",
@@ -214,12 +214,12 @@ async function deleteRequest(id){
       .then(response => response)
       .catch(e => e)
       if(response == 'Request deleted successfully'){
-        document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
-        setTimeout(()=>{window.location.href = '../user/user-index.html'} , 1000);
+        document.querySelector('.request-delete-modal').style.transform = 'translateY(-100em);';
+       return setTimeout(()=>{window.location.href = '../user/user-index.html'} , 1000);
       }else{}
   })
-  }
   document.querySelector('.btn-delete-No').addEventListener('click', ()=>{
-    document.querySelector('.request-delete-modal').style.transform = 'translateY(-50em)';
-  })
+    window.location.href = '../user/user-index.html'
+})
+  }
 

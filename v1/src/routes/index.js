@@ -18,8 +18,17 @@ appRouter.post('/auth/signup', Authentication.signUp);
 // loginin in a user
 appRouter.post('/auth/login', Authentication.logInAuthUser);
 
-//  sending a get request[only for users]
+//[getting current profile for users]
+appRouter.get('/api/v1/user/:userid/profile', checkToken, requestControllers.gettingProfile);
+
+// [updating profile for users]
+appRouter.put('/api/v1/user/:userid/update',checkToken, requestControllers.updateProfile);
+
+//  getting all request[only for users]
 appRouter.get('/api/v1/:userId/requests', checkToken , requestControllers.allRequests);
+
+//[GETTING ALL LOGGED IN USERS FOR ONLY ADMIN]
+appRouter.get('/api/v1/admin/allusers', checkToken, requestControllers.allloggedinusers);
 
 //  sending a get request for admin[only admin has access to this]
 appRouter.get('/api/v1/requests', checkToken , requestControllers.allRequestsAdmin);
@@ -47,7 +56,7 @@ appRouter.delete('/api/v1/requests/:id', checkToken, requestControllers.deleteRe
 
 appRouter.get("*", (req, res) => {
     res.status(404).send(`<div style="height: 90vh; width: 100%; margin: 0px; display: flex; justify-content: center; align-items: center; flex-direction: column">
-                    <h1 style="color: #05668D; font-size: 100px;">404</h1><h3>Page not found</h3></div>`);
+    <h1 style="color: #05668D; font-size: 200px;">404</h1><h2>Page not found please go back to the previous page</h3></div>`);
 })
 
 export default appRouter;

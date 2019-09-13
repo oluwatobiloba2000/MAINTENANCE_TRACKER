@@ -35,7 +35,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-                <i class="far fa-user"> </i>&nbsp;<span class="username-update"> user</span>
+                <span class="username-update"> user</span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -57,15 +57,20 @@
                     <a href="../user/user-pending-request.html"><i class="far fa-clock"></i> Pending requests</a>
                     <hr class="divider">
                 </li>
+                <div class="profile-pics-container">
+                        <!-- <img src="https://www.w3schools.com/howto/img_avatar.png" class="profile-pics" alt=""> -->
+                        <button class="profile-btn">View profile</button>
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-sublist">
                 <li id="log-out" class="navbar-list hover-red">
-                    <a href="../../index.html"><i class="fas fa-door-open"></i> Log out</a>
+                    <a href="javascript:void(0)"><i class="fas fa-door-open"></i> Log out</a>
                 </li>
                 <br>
                 <div class="container-user-name">
                     <li title="current user" class="navbar-list">
-                      <i class="far fa-user"></i> Logged in as <span id="username-update">User                  
+                      <i class="far fa-user"></i> Logged in as <span id="username-update">User
                  </span>
                  (<span title="Network status" class="networkerror status error-transition">
                      <span class="i"></span>
@@ -82,8 +87,14 @@
                 <div class="container">
                     <div class="container-body">
                         <h1>Dashboard</h1>
-                        <p>Approved request [<span id="number-of-request">0</span>]</p>
+                        <p>Approved request <span id="number-of-request">0</span></p>
                     </div>
+                    <h1 class="grey-text">No Appproved request at the moment
+                        <br>
+                        <br>
+                        <br>from
+                        <span class="design-text">TRACKY</span> team
+                    </h1>
                 </div>
             </div>
             <div class="container">
@@ -134,6 +145,7 @@
     </div>
     <script src="../../UI ELEMENTS/user-index.js"></script>
     <script src="../../frontend/approved-request-user.js"></script>
+    <script src="../../frontend/profile.js"></script>
     <script src="../../UI ELEMENTS/networkerror.js"></script>
     <script src="../../frontend/logout.js"></script>
 </body>

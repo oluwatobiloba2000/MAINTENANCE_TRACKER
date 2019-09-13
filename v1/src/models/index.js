@@ -27,7 +27,6 @@ const requestTable = async () =>{
                userName VARCHAR(128) NOT NULL)`;
             try {
              await pool.query(queryRequest);
-            console.log('request table created !!')
         }catch (e){
             console.log(e);
         }
@@ -36,12 +35,13 @@ const requestTable = async () =>{
 const userTable = async () =>{
     const queryUser = `CREATE TABLE IF NOT EXISTS
     users(userId SERIAL PRIMARY KEY,
+        profileimage VARCHAR(10000) DEFAULT 'https://www.w3schools.com/howto/img_avatar.png',
+        email VARCHAR(120) DEFAULT 'No email yet',
         username VARCHAR(128) NOT NULL,
         password VARCHAR(128) NOT NULL
         )`;
     try{
          await pool.query(queryUser);
-        console.log('user table created !!')
     }catch(e){
         console.log(e);
     }

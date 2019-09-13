@@ -40,7 +40,7 @@
                 <i id="bars-icon" class="fa fa-bars"></i>
             </div>
             <div class="nav-bar-username-mobile">
-            <i class="far fa-user"> </i>&nbsp;<span class="username-update"> user</span>
+            <span class="username-update"><img src="https://www.w3schools.com/howto/img_avatar.png" class="profile-pics-mobile" alt=""></span>
             </div>
         </div>
         <hr class="divider-mobile">
@@ -67,15 +67,21 @@
                         request</a>
                     <hr class="divider">
                 </li>
+                <li class="navbar-list">
+                    <div class="profile-pics-container">
+                        <!-- <img src="https://www.w3schools.com/howto/img_avatar.png" class="profile-pics" alt=""> -->
+                        <button class="profile-btn">View profile</button>
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-sublist">
                 <li class="navbar-list hover-red" id="log-out">
-                    <a href="../../index.html"><i class="fas fa-door-open"></i> Log out</a>
+                    <a href="javascript:void(0)"><i class="fas fa-door-open"></i> Log out</a>
                 </li>
                 <br>
                 <div class="container-user-name">
                     <li title="current user" class="navbar-list">
-                      <i class="far fa-user"></i> Logged in as <span id="username-update">User                  
+                      <i class="far fa-user"></i> Logged in as <span id="username-update">User
                  </span>
                  <span title="Network status" class="networkerror status error-transition">
                      <span class="i"></span>
@@ -94,14 +100,14 @@
                 <div class="container">
                     <div class="container-body">
                         <h1>Dashboard</h1>
-                        <p>All request [<span id="number-of-request">0</span>]</p>
+                        <p>All request <span id="number-of-request">0</span></p>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div id="card" class="card">
                 </div>
-                <h1 class="grey-text">You have not made any request at the moment, To make a request click on the "Create a new request button" and fill in your request
+                <h1 class="grey-text">You have not made any request at the moment, To make a request click on "Create a new request" button and fill in your request
                      <br>
                      <br>
                      <br>from
@@ -129,7 +135,7 @@
                             <br>
                             <select name="category" id="post_category">
                                 <option disabled>Please choose a category</option>
-                                <option value="Mainteinance">Maintenance</option>
+                                <option value="Maintenance">Maintenance</option>
                                 <option value="Repair">Repair</option>
                             </select>
                         </p>
@@ -170,6 +176,7 @@
     <script src="../../frontend/allrequest.js"></script>
     <script src="../../UI ELEMENTS/home.js"></script>
     <script src="../../UI ELEMENTS/networkerror.js"></script>
+    <script src="../../frontend/profile.js"></script>
     <script src="../../frontend/logout.js"></script>
 </body>
 

@@ -51,7 +51,7 @@ document.getElementById('sign_in_button').addEventListener('click' , async (e)=>
         errorDisplay.classList.add('user-red');
     }else if(response === 'incorrect username or password'){
         errorDisplay.innerHTML = `<p><i class="fas fa-exclamation-triangle"></i> Incorrect username or password</p>`
-        errorDisplay.classList.add('user-red');   
+        errorDisplay.classList.add('user-red');
     }else if(response === 'username does not exist on our server'){
         errorDisplay.innerHTML = `<p><i class="fas fa-exclamation-triangle"></i> Username does not exist</p>`
         errorDisplay.classList.add('user-red');

@@ -4,6 +4,75 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 class RequestControllers {
+    //FOR ADMIN[all logged in users]
+    static allloggedinusers(req, res) {
+        jwt.verify(req.token, process.env.ADMINKEY, async (err, authorizedData) => {
+            if (err) {
+                res.json(err);
+            } else {
+                try {
+                    const query = "SELECT * FROM users"
+                    const users = await pool.query(query);
+                    if (!users.rows.length) return res.status(200).send("NO USER");
+                    return res.status(200).json({
+                        users: users.rows
+                    })
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        })
+    }
+        // getting user current profile
+        static gettingProfile(req, res){
+            jwt.verify(req.token, process.env.KEY, async(err, authorizedData)=>{
+                if(err){
+                    res.json(err);
+                }else{
+                    const userid = req.params.userid;
+                    try{
+                        const query = `SELECT * FROM users WHERE userId=$1`
+                        const value = [userid];
+                        const userProfile = await pool.query(query, value);
+                        if(!userProfile.rows.length){
+                            return res.status(404).json("profile not found");
+                        }
+                        return res.status(200).json(userProfile.rows);
+                    }catch(e){
+                        console.log(e);
+                    }
+                }
+            })
+ }
+
+    // updating profile
+    static updateProfile(req, res){
+        jwt.verify(req.token, process.env.KEY, async(err, authorizedData)=>{
+            if(err){
+                res.json(err);
+            }else{
+                const userid = req.params.userid;
+                try{
+                    const query = `SELECT * FROM users WHERE userId=$1`
+                    const value = [userid];
+                    const formerProfile = await pool.query(query, value);
+                    if(!formerProfile.rows.length){
+                        return res.status(404).json("profile not found");
+                    }
+                    const formerProfileToUpdate = formerProfile.rows[0];
+                    const profileimage = req.body.profileimage || formerProfileToUpdate.profileimage;
+                    const email = req.body.email || formerProfileToUpdate.email;
+                    const updatequery = `UPDATE users SET profileimage=$1, email=$2 WHERE userid=$3 RETURNING *`
+                    const values = [profileimage, email, userid];
+                    const newProfle = await pool.query(updatequery, values);
+                    return res.status(200).json(newProfle.rows);
+
+                }catch(e){
+                    console.log(e);
+                }
+            }
+        })
+    }
 
     // getting all requests
     static allRequests(req, res) {
@@ -91,7 +160,7 @@ static updateRequest(req, res) {
               const value = [id];
               const request = await pool.query(queryText, value);
               if (!request.rows.length){
-                  return res.status(404).json("Awwwwn snap ID not found");
+                  return res.status(404).json("ID not found");
               }
               if(request.rows[0].status === "Approved"){
                    return res.json({

@@ -94,7 +94,6 @@ class Authentication {
                             message: "sign up success",
                             user: signedUser.rows[0]["username"],
                             userId : signedUser.rows[0]["userid"],
-                            passphase,
                             usertoken : token
                         })
              }

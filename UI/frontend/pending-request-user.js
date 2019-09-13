@@ -23,20 +23,19 @@ async function getAllPendingRequest(){
       .then(response => response)
       .catch(e => e)
       let cardBody = document.querySelector("#card");
-          document.querySelector('.username-update').innerText = `${userName}`
-        document.getElementById('username-update').innerText = `${userName}`
-      let pendingRequest = response.request.filter((e)=>{
-        return e.status == "pending"
-      })
-      if(response.length == 0){
-          console.log("empty")
-        document.querySelector('.grey-text').classList.add('grey-text-show');
+      document.querySelector('.username-update').innerText = `${userName}`
+      document.getElementById('username-update').innerText = `${userName}`
+      if(response == 'SyntaxError: Unexpected token N in JSON at position 0'){
+        return document.querySelector('.grey-text').classList.add('grey-text-show');
       }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
-            window.location.href = '../signin.html'
+          window.location.href = '../signin.html'
         }, 3000)
-      }else if(response.length !== 0){
+      }else{
+        let pendingRequest = response.request.filter((e)=>{
+         return e.status == "pending"
+       })
         //   filter approved request
     pendingRequest.forEach(requests => {
        cardBody.innerHTML +=`<div class="requests"><p style="margin :0 ; padding : 1%; background: rgba(5, 102, 141, 0.342);">${requests.title}</p>

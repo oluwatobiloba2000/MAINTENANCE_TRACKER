@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka|Poppins|Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../../img/technical-support-2_icon-icons.com_52811.ico">
+    <link rel="stylesheet" href="../../STYLE/user-style/profile.css">
+    <link rel="stylesheet" href="../../STYLE/user-style/user-index.css">
+    <title>Profile | Tracky</title>
+</head>
+
+<body>
+        <header>
+            <button id="top-scroll-btn" class="btn-scroll-top">
+                <i class="fas fa-angle-up"></i>
+            </button>
+                    <div class="modal-error-content-green success">
+                        <p>success</p>
+                    </div>
+        <!-- error modal starts -->
+        <!-- The Modal -->
+        <div id="errorModal" class="errormodal error-transition">
+
+            <!-- Modal content -->
+            <div class="modal-error-content">
+                <span class="close-error-modal">X</span>
+                <p>Request input cannot be empty</p>
+            </div>
+        </div>
+        <!-- error modal ends -->
+        <div class="navbar-mobile">
+            <div>
+                <i id="bars-icon" class="fa fa-bars"></i>
+            </div>
+            <div class="nav-bar-username-mobile">
+            <span class="username-update">
+                Profile
+            </span>
+            </div>
+        </div>
+        <hr class="divider-mobile">
+        <nav class="navbar navbar-fixed close-nav-mobile">
+            <a class="navbar-logo" href="../../index.html">
+                <img title="HOME" src="https://dashkit.goodthemes.co/assets/img/logo.svg" alt="Logo">
+            </a>
+            <ul class="navbar-sublist">
+                <li title="Current page" class="navbar-list">
+                    <a href="../user/user-index.html"><i class="fas fa-home"></i> All requests</a>
+                    <hr class="divider">
+                </li>
+                <li class="navbar-list">
+                    <a href="../user/user-approved-request.html"><i class="fas fa-check-double"></i> Aproved
+                        requests</a>
+                    <hr class="divider">
+                </li>
+                <li class="navbar-list">
+                    <a href="../user/user-pending-request.html"><i class="far fa-clock"></i> Pending requests</a>
+                    <hr class="divider">
+                </li>
+            </ul>
+            <ul class="navbar-sublist">
+                <li class="navbar-list hover-red" id="log-out">
+                    <a href="javascript:void(0)"><i class="fas fa-door-open"></i> Log out</a>
+                </li>
+                <br>
+                <div class="container-user-name">
+                    <li title="current user" class="navbar-list">
+                      <i class="far fa-user"></i> Logged in as <span id="username-update">User
+                 </span>
+                 <span title="Network status" class="networkerror status error-transition">
+                     <span class="i"></span>
+                   </span>
+                    </li>
+                </div>
+                    </li>
+                </div>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="container">
+            <div class="profile-container animate-bottom">
+
+            </div>
+            </div>
+    </main>
+    <span class="right_nav"></span>
+    <span class="close"></span>
+    <span class="nav-1"></span>
+    <span class="nav-2"></span>
+    <span id="request-btn"></span>
+
+    <script src="../../UI ELEMENTS/user-index.js"></script>
+    <script src="../../UI ELEMENTS/home.js"></script>
+    <script src="../../UI ELEMENTS/networkerror.js"></script>
+    <script src="../../frontend/update-profile.js"></script>
+    <script src="../../frontend/logout.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,26 @@ body {
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f8f8f8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #505050;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(4, 52, 71);
+}
+
 
 .navbar {
     border: 1px solid rgba(0, 0, 0, 0.438);
@@ -96,12 +116,9 @@ body {
 .navbar-sublist {
     list-style-type: none;
     padding-left: 0;
+    margin-bottom: 9px;
+    margin-top : 0;
 }
-
-/* .navbar-list {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-} */
 
 .navbar-list a {
     text-decoration: none;
@@ -121,7 +138,7 @@ body {
 
 .divider {
     margin-top: .70rem;
-    margin-bottom: 2.75rem;
+    margin-bottom: 1.5rem;
     width: 90%;
 }
 
@@ -532,7 +549,7 @@ body {
     right: 0;
     left: 0;
     transition: 0.5s ease-in;
-    transform: translateY(-50em);
+    transform: translateY(-100em);
     background-color: rgba(177, 177, 177, 0.609);
     z-index: 10000;
 }
@@ -562,6 +579,55 @@ body {
 .delete-icon{
     font-size: 5em;
 }
+.profile-pics{
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    border: 1px solid #05668D;
+    vertical-align: middle;
+}
+.profile-pics:hover{
+    border: 2px solid black;
+    cursor: pointer;
+}
+.profile-pics-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-btn{
+    width: 15em;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #05668D;
+    border: 1px solid #000;
+    transition: 1s ease;
+}
+.profile-btn:hover{
+    background-color: rgb(255, 255, 215);
+    color: rgb(0, 0, 0);
+}
+.profile-pics-mobile{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+#number-of-request{
+    border-radius: 50%;
+    color: #fff;
+    background-color: #05668D;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -633,14 +699,37 @@ body {
     }
 }
 
+input[type=text]#search {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    overflow: visible;
+    background-color: white;
+    background-image: url(https://www.w3schools.com/howto/searchicon.png);
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
 @media all and (max-width: 650px) {
     .modal-content {
         width: 80%;
+    }
+    #span-dashboard{
+        float: none;
     }
 }
 
 @media all and (max-width: 450px) {
     .modal-content {
         width: 100%;
+    }
+    input[type=text]#search{
+        width: 100%;
+        font-size: 15px;
+        border-radius: 4px;
+        margin-left: 10px;
+        width: 95%;
     }
 }

@@ -10,11 +10,14 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="shortcut icon" href="../../img/technical-support-2_icon-icons.com_52811.ico">
     <link rel="stylesheet" href="../../STYLE/user-style/user-index.css">
-    <title>Filter request-admin | Tracky</title>
+    <link rel="stylesheet" href="../../STYLE/all-users.css">
+    <title>All users | Tracky</title>
 </head>
 
 <body>
     <header>
+        <div class="modal-error-content-green success">
+        </div>
         <button id="top-scroll-btn" class="btn-scroll-top">
             <i class="fas fa-angle-up"></i>
         </button>
@@ -32,22 +35,21 @@
                 <img title="HOME" src="https://dashkit.goodthemes.co/assets/img/logo.svg" alt="Logo">
             </a>
             <ul class="navbar-sublist">
-                <li class="navbar-list">
-                    <a href="../admin/admin-index.html"><i class="fas fa-home"></i> All requests</a>
+                <li  class="navbar-list">
+                    <a  href="../admin/admin-index.html"><i class="fas fa-home"></i> All requests</a>
                     <hr class="divider">
                 </li>
                 <li class="navbar-list">
-                    <a href="../admin/admin-approve-request.html"><i class="fas fa-check-double"></i> Approve
+                    <a href="../admin/admin-approve-request.html"><i class="fas fa-check-double"></i> Approved
                         requests</a>
                     <hr class="divider">
                 </li>
                 <li class="navbar-list">
-                    <a title="Current page" class="active" href="../admin/admin-filter-request.html"><i
-                            class="fas fa-search"></i> filter requests</a>
+                    <a href="../admin/admin-filter-request.html"><i class="fas fa-search"></i> filter requests</a>
                     <hr class="divider">
                 </li>
-                <li class="navbar-list">
-                    <a href="../admin/all-users.html"><i class="far fa-user"></i> All Users</a>
+                <li title="Current page" class="navbar-list">
+                    <a class="active" href="../admin/all-users.html"><i class="far fa-user"></i> All Users</a>
                     <hr class="divider">
                 </li>
             </ul>
@@ -71,9 +73,7 @@
             <div class="header">
                 <div class="container">
                     <div class="container-body">
-                        <h1>Dashboard</h1>
-                        <input id="search" class="search" placeholder="search for requests based on their title, username, date or category" type="text">
-                        <p id="span-dashboard">number of requests avaliable <span id="number-of-request">0</span></p>
+                        <p>All Users <span id="number-of-request">0</span></p>
                     </div>
                 </div>
             </div>
@@ -82,15 +82,11 @@
                 </div>
             </div>
         </div>
-
         </div>
     </main>
-    <div class="networkerror">
-        <div class="ntw-content-online">online</div>
-    </div>
     <script src="../../UI ELEMENTS/admin-index.js"></script>
+    <script src="../../frontend/admin/all-users.js"></script>
     <script src="../../frontend/admin/admin-logout.js"></script>
-    <script src="../../frontend/admin/filter-requests.js"></script>
 </body>
 
 </html>

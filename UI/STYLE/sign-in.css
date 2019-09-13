@@ -7,6 +7,7 @@
     display: flex;
 }
 form{
+    border-radius: 20px;
     border: 2px solid grey;
     padding: 10px;
 }

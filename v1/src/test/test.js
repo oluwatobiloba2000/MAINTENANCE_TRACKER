@@ -6,36 +6,80 @@ import app from "../server";
 chai.use(chaiHttp);
 chai.should();
 
-describe("signin", () => {
-    describe("POST /auth/login", () => {
-        //SIGNING IN USERS
-        it('it should be able to sign in a user', (done) => {
-            const user = {
-                username : "tobby",
-                password : "1234"
-            }
-            chai.request(app)
-                .post('/auth/login')
-                .send(user)  
-                .end((err, res) => {
-                    res.should.have.a.status(200)
-                    
-                    done();
+
+let usertoken;
+let admintoken;
+describe("POST /auth/login", () => {
+    //SIGNING UP USERS
+    it('it should be able to sign up a user', (done) => {
+        const user = {
+            username : "tobby",
+            password : "12"
+        }
+        chai.request(app)
+        .post('/auth/signup')
+        .send(user)
+        .end((err, res) => {
+            res.should.have.a.status(200)
+            usertoken = res.usertoken
                 });
+                done();
         });
     })
-    // describe("GET /api/v1/users/requests/:id ", () => {
-    //     it('it should get a request by a given id', (done) => {
-    //         let id = 1;
-    //         chai.request(app)
-    //             .get(`/api/v1/users/requests/${id}`)
-    //             .end((err, res) => {
-    //                 res.should.have.status(200)
-    //                 res.should.be.a('object');
-    //                 done();
-    //             })
-    //     })
-    // })
+
+    describe("POST /auth/login", () => {
+        //SIGNING IN USERS
+        it('it should be able to sign in the admin', (done) => {
+            const admin = {
+                    username : process.env.ADMINUSERNAME,
+                    password : process.env.ADMINPASSWORD
+                }
+                chai.request(app)
+                    .post('/auth/login')
+                    .send(admin)
+                    .end((err, res) => {
+                        res.should.have.a.status(200)
+                        admintoken = res.admintoken
+                    });
+                    done();
+            });
+        })
+
+    describe("GET /api/v1/:userId/requests ", () => {
+        it('it should get a request by a given id', (done) => {
+            let id = 1;
+            chai.request(app)
+                .get(`/api/v1/${id}/requests`)
+                .send(
+                    headers = {
+                        Authorization : `Bearer ${usertoken}`
+                    }
+                )
+                .end((err, res) => {
+                    res.should.have.status(200)
+                    res.should.be.a('object');
+                    done();
+                })
+        })
+    })
+
+        // describe("POST /auth/login", () => {
+        //     //SIGNING IN USERS
+        //     it('it should be able to sign in a user', (done) => {
+        //         const user = {
+        //             username : "tobby",
+        //             password : "1234"
+        //         }
+        //         chai.request(app)
+        //             .post('/auth/login')
+        //             .send(user)
+        //             .end((err, res) => {
+        //                 res.should.have.a.status(200)
+        //                 done();
+        //             });
+        //     });
+        // })
+
 
     // describe("POST /api/v1/users/requests/", () => {
     //     it('it should post a request', (done) => {
@@ -74,4 +118,3 @@ describe("signin", () => {
     //         })
     //     })
     // })
-})

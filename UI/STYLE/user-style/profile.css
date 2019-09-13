@@ -1,0 +1,109 @@
+.container-body h1{
+    text-align: center;
+}
+.container-body {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #EBF2FA;
+    border-bottom: 1px solid #05668D;
+}
+
+.container {
+    padding-left: 156px !important;
+    padding-right: 156px !important;
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 2s;
+    animation-name: animatebottom;
+    animation-duration: 2s
+}
+.profile-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.big-profile-pics{
+      border-radius: 50%;
+      border: 2px solid #05668D;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+}
+.profile-content{
+    width: 100%;
+    margin: 5px;
+    border-radius: 80px;
+    padding: 6px 6px 6px 10px;
+    outline: none;
+    border: 1px solid grey;
+}
+.profile-display{
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 0;
+    color: #05668D;
+}
+
+.header{
+    margin-bottom: 5px !important;
+}
+.btn-group{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-btn-big{
+    cursor: pointer;
+    width: 40%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #05668D;
+    color: #EBF2FA;
+}
+.profile-btn-big:hover{
+    border: 2px solid black;
+}
+.cancel-button{
+    background-color: red;
+    color: #EBF2FA;
+}
+.update-button{
+    background-color: green;
+    color: #EBF2FA;
+}
+.link{
+    border-radius: 10px;
+}
+.username-profile{
+    cursor: not-allowed;
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.email-validation{
+    color: red;
+    visibility: hidden;
+    padding-left: 10px;
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 }
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+    from{ bottom:-100px; opacity:0 }
+    to{ bottom:0; opacity:1 }
+}
+
+@media all and (max-width:900px){
+    .container{
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+}
+}

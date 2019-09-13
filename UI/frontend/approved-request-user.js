@@ -24,16 +24,20 @@ async function getAllApprovedRequest(){
         document.querySelector('.username-update').innerText = `${userName}`
         document.getElementById('username-update').innerText = `${userName}`
       let cardBody = document.querySelector("#card");
-      let approvedRequest = response.request.filter((e)=>{
-        return e.status == "Approved"
-      })
-      if(response["message"] === 'jwt expired'){
+
+      if(response == 'SyntaxError: Unexpected token N in JSON at position 0'){
+       return document.querySelector('.grey-text').classList.add('grey-text-show');
+      }else if(response["message"] === 'jwt expired'){
         errorInputModalGreen.classList.add("error-modal-open");
         setTimeout(()=>{
             window.location.href = '../HTML/signin.html'
         }, 3000)
       }else if(response.length !== 0){
-        //   filter approved request
+
+       let approvedRequest = response.request.filter((e)=>{
+        return e.status == "Approved"
+       })
+         //   filter approved request
     approvedRequest.forEach(requests => {
        cardBody.innerHTML += `<div class="requests"><p class="request-title">${requests.title}</p>
       <p class="request-time">Date : ${requests.time}</p>
