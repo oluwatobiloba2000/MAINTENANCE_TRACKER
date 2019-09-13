@@ -41,13 +41,13 @@ async function getAllRequest(){
 getAllRequest();
 
 document.getElementById('search').addEventListener('keyup', (e)=>{
-    let values = document.getElementById('search').value.trim();
+    let values = document.getElementById('search').value.trim().toUpperCase();
     let li = document.querySelectorAll('.requests');
     li.forEach((e)=>{
-        let titles = e.getElementsByTagName('p')[0];
-        let dates = e.getElementsByTagName('p')[1];
-        let category = e.getElementsByTagName('p')[2];
-        if(titles.innerText.indexOf(values) > -1 || dates.innerText.indexOf(values) > -1 || category.innerText.toUpperCase().indexOf(values.toUpperCase()) > -1){
+        let titles = e.getElementsByTagName('p')[0].innerText.toUpperCase();
+        let dates = e.getElementsByTagName('p')[1].innerText.toUpperCase();
+        let category = e.getElementsByTagName('p')[2].toUpperCase();
+        if(titles.indexOf(values) > -1 || dates.indexOf(values) > -1 || category.innerText.indexOf(values) > -1){
             e.style.display = ''
         }
         else{
