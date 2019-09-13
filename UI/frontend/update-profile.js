@@ -9,7 +9,7 @@ const checkUserToken = () => {
 const currentUserId = window.localStorage.getItem('userId');
 const profileContainer = document.querySelector('.profile-container');
 
-let path = `https://maintenance-tracky-api.herokuapp.com`;
+let apipath = `https://maintenance-tracky-api.herokuapp.com`;
 // let apipath = `http://localhost:3000`;
 const username = window.localStorage.getItem('user-name');
 
