@@ -46,7 +46,7 @@ document.getElementById('search').addEventListener('keyup', (e)=>{
     li.forEach((e)=>{
         let titles = e.getElementsByTagName('p')[0].innerText.toUpperCase();
         let dates = e.getElementsByTagName('p')[1].innerText.toUpperCase();
-        let category = e.getElementsByTagName('p')[2].toUpperCase();
+        let category = e.getElementsByTagName('p')[2].innerText.toUpperCase();
         if(titles.indexOf(values) > -1 || dates.indexOf(values) > -1 || category.innerText.indexOf(values) > -1){
             e.style.display = ''
         }
