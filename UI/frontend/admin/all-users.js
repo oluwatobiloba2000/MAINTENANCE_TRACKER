@@ -6,8 +6,8 @@ const checkToken = ()=>{
     window.location.href = '../signin.html';
 };
 
-// let path = `https://maintenance-tracky-api.herokuapp.com`;
-let path = `http://localhost:3000`;
+let path = `https://maintenance-tracky-api.herokuapp.com`;
+// let path = `http://localhost:3000`;
 
 async function getAllUsers(){
     const response = await fetch(`${path}/api/v1/admin/allusers`, {

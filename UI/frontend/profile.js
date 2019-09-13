@@ -11,8 +11,8 @@ const profilePicsDiv = document.querySelector('.profile-pics-container');
 const mobileProfilePics = document.querySelector('.username-update');
 const currentUsername = window.localStorage.getItem('user-name');
 
-// let path = `https://maintenance-tracky-api.herokuapp.com`;
-let apipath = `http://localhost:3000`;
+let path = `https://maintenance-tracky-api.herokuapp.com`;
+// let apipath = `http://localhost:3000`;
 
 async function profilepicsofcurrentuser() {
   const response = await fetch(`${apipath}/api/v1/user/${currentUserId}/profile`, {

@@ -6,8 +6,8 @@ const checkToken = ()=>{
     window.location.href = '../../HTML/signin.html';
   };
 
-  // let herokuAdminPath = `https://maintenance-tracky-api.herokuapp.com`;
-  let herokuAdminPath = `http://localhost:3000`;
+  let herokuAdminPath = `https://maintenance-tracky-api.herokuapp.com`;
+  // let herokuAdminPath = `http://localhost:3000`;
 async function getAllRequest(){
     const response = await fetch(`${herokuAdminPath}/api/v1/requests`, {
       method : "GET",
