@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 dotenv.config();
 import bcrypt from "bcrypt"
 import pool from '../models';
-import { sign } from 'crypto';
 
 class Authentication {
     // loggining in users
