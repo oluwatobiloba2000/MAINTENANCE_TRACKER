@@ -1,10 +1,10 @@
-let loader;
 let errorDisplay = document.querySelector('.errormodal');
 let backgroundLoader = document.querySelector('.loader-back');
 const errorInputModalGreen = document.querySelector('.modal-error-content-green');
 
-function load(){
-    loader = setTimeout(showPage, 1000);
+function showLoader(){
+  backgroundLoader.classList.add('background-loader');
+  document.getElementById("loader").style.display = "block";
 }
 
 function showPage() {
@@ -87,6 +87,9 @@ async function getAllRequest(){
       .then(response => response)
       .catch(e => e)
       let cardBody = document.querySelector("#card");
+      setTimeout(()=>{
+        showPage()
+      }, 1000)
     // document.querySelector('.username-update').innerText = `${userName}`
     document.getElementById('username-update').innerText = `${userName}`
       if(response === 'NO REQUEST' || response == 'SyntaxError: Unexpected token N in JSON at position 0'){

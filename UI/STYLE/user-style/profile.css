@@ -91,6 +91,17 @@
     visibility: hidden;
     padding-left: 10px;
 }
+fieldset{
+    margin-top: 12px;
+}
+.file{
+    margin: 10px;
+    color: blue;
+    font: message-box;
+}
+.background-loader-h1{
+    text-align: center;
+}
 @-webkit-keyframes animatebottom {
     from { bottom:-100px; opacity:0 }
     to { bottom:0px; opacity:1 }
