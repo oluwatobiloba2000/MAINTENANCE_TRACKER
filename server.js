@@ -12,9 +12,11 @@ import bodyParser from "body-parser"
 import cors from 'cors';
 
 // import routes
-import userRouters from "./routes/user.route";
-import authRouters from './routes/auth.route';
-import adminRouters from './routes/admin.routes';
+import userRouters from "./server/v2/src/routes/user.route";
+import authRouters from './server/v2/src/routes/auth.route';
+import adminRouters from './server/v2/src/routes/admin.routes';
+//v1 route
+import appv1Routers from './server/v1/src/routes';
 
 // initialize express
 const app = express();
@@ -72,7 +74,10 @@ app.get('/', (req, res) => {
 //   next();
 // });
 
+// v1 route
+app.use('/api/v1/', appv1Routers);
 
+//v2 routes
 app.use('/api/v2/auth/', authRouters);
 app.use('/api/v2/user/', userRouters);
 app.use('/api/v2/admin/', adminRouters);
