@@ -1,0 +1,16 @@
+engines:
+  duplication:
+    enabled: false
+    config:
+      languages:
+        -javascript
+  eslint:
+    enabled: true
+    checks:
+      similar-code:
+        enabled: false
+exclude_sparherns:
+- "node_modules/"
+- ".nyc_output"
+- "coverage"
+- "./specs/*.js"
