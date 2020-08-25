@@ -1,13 +1,20 @@
 {
   "name": "maintenance-tracker-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is a maintenance tracker app",
-  "main": "app.js",
+  "main": "server.js",
+  "engines": {
+    "node": "^12.13.0"
+  },
   "scripts": {
-    "test": "mocha --require @babel/register v1/src/test/test.js -exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "nodemon --exec babel-node v1/src/server.js",
-    "start:dev": " babel-node v1/src/server.js"
+    "start": "npm run build && babel-node server.js",
+    "start:dev": "nodemon --exec babel-node server.js",
+    "test": "./node_modules/.bin/nyc mocha --require @babel/register ./src/tests/**/*.test.js --exit",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run build-babel",
+    "build-babel": "babel -d ./build ./server -s",
+    "migrate": "babel-node ./server/v2/src/migration/index"
   },
   "repository": {
     "type": "git",
@@ -20,13 +27,15 @@
   },
   "homepage": "https://github.com/oluwatobiloba2000/MAINTENANCE_TRACKER_FINAL#readme",
   "dependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
-    "bcrypt": "^5.0.0",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "@babel/runtime": "^7.10.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
@@ -34,10 +43,12 @@
     "coveralls": "^3.0.6",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^6.2.0",
-    "nodemon": "^1.19.1",
+    "mocha": "^8.1.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
     "nyc": "^14.1.1",
     "pg": "^7.12.1",
     "sinon": "^7.4.1"

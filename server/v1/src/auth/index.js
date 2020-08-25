@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
 dotenv.config();
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import pool from '../models';
 
 class Authentication {
