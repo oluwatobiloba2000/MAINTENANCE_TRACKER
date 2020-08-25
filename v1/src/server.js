@@ -1,4 +1,5 @@
-import morgan from 'morgan';
+// path
+import path from 'path';
 
 // import express
 import express from "express";
@@ -12,16 +13,11 @@ import bodyParser from "body-parser"
 import cors from 'cors';
 
 // import routes
-import userRouters from "./server/v2/src/routes/user.route";
-import authRouters from './server/v2/src/routes/auth.route';
-import adminRouters from './server/v2/src/routes/admin.routes';
-//v1 route
-import appv1Routers from './server/v1/src/routes';
+import appRouter from "./routes"
 
 // initialize express
 const app = express();
 
-app.use(morgan("dev"))
 app.use(cors());
 
 // initialize dotenv
@@ -32,16 +28,7 @@ app.use(bodyParser.json({
     extended: true
 }));
 
-app.get('/V2', (req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        message: 'maintenance tracker Api v2',
-        createdat: 'Aug 18, 2020',
-        code: 200,
-        apiStatus: 'Up and running',
-        createdby: 'Anani Oluwatobiloba'
-    });
-})
+
 // app.use((req, res, next) => {
 //      // allow all routes
 //    res.setHeader('Access-Control-Allow-Origin', '*');
@@ -74,23 +61,17 @@ app.get('/V2', (req, res) => {
 //   next();
 // });
 
-// v1 route
-app.use(appv1Routers);
 
-//v2 routes
-app.use('/api/v2/auth/', authRouters);
-app.use('/api/v2/user/', userRouters);
-app.use('/api/v2/admin/', adminRouters);
-app.all("*", (req, res) => {
-    res.status(404).json({
-        status: 'error',
-        code: 404,
-        message: 'route not found'
-    });
-})
+// configure path to load html files
+const frontend = path.join(__dirname, '../../UI');
+
+app.use(express.static(frontend));
+
+app.use(appRouter);
+
 
 // declear a port to run on
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3000;
 
 
 
