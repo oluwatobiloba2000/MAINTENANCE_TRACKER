@@ -14,7 +14,7 @@
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel -d ./build ./server -s",
-    "migrate": "babel-node ./src/migration/index"
+    "migrate": "babel-node ./server/v2/src/migration/index"
   },
   "repository": {
     "type": "git",
