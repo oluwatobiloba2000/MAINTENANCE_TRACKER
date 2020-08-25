@@ -32,7 +32,7 @@ app.use(bodyParser.json({
     extended: true
 }));
 
-app.get('/', (req, res) => {
+app.get('/V2', (req, res) => {
     res.status(200).json({
         status: 'ok',
         message: 'maintenance tracker Api v2',
@@ -75,7 +75,7 @@ app.get('/', (req, res) => {
 // });
 
 // v1 route
-app.use('/api/v1/', appv1Routers);
+app.use(appv1Routers);
 
 //v2 routes
 app.use('/api/v2/auth/', authRouters);
@@ -90,7 +90,7 @@ app.all("*", (req, res) => {
 })
 
 // declear a port to run on
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6000;
 
 
 
