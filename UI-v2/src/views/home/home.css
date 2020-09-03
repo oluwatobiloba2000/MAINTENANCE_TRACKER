@@ -1,0 +1,178 @@
+.home{
+  background: linear-gradient(55deg, #0fb8ad70 0%, #1fc8dbab 51%, #2cb6e8d7 85%);
+}
+
+.logoContainer {
+  padding-left: 10px;
+  display: flex;
+  font-size: 23px;
+  align-items: center;
+  color: #05668D;
+}
+
+.header-container{
+  background-color: #2f2e41;
+}
+
+.create-acc-btn{
+  height: 48px;
+    font-size: 20px;
+    width: 50%;
+    margin-top: 26px;
+    background-color: #2f2e41;
+}
+
+.home-side-panel {
+  padding: 10px;
+  height: 64vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-section-text {
+  color: #ffffff;
+  background-color: #1890ff;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 9px;
+}
+
+.home-content {
+  /* border: 1px dashed #0f90d13d;
+  background-color: rgb(15 144 209 / 8%); */
+  height: 100%;
+}
+
+.home-svg-container {
+  padding: 25px;
+  border-radius: 79px;
+  margin-bottom: 50px;
+  margin-left: 16px;
+}
+
+.logo-name {
+  font-size: 35px;
+  color: #2c7be5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 64vh;
+  padding-left: 55px;
+}
+
+.sm-text {
+  color: #2f2e41;
+  font-size: 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 5px 5px 5px;
+  background-color: #1890ff9c;
+  height: 200px;
+  margin: 6px;
+  border-radius: 9px;
+  color: #ffffff;
+}
+
+.border-round {
+  border: 1px solid #0f90d154;
+}
+
+.bg-img{
+  background-size: 72% 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 245px;
+  background-color: white;
+}
+
+.details-img-1 {
+  background-image: url(../../assests/images/undraw_message_sent_1030.svg);
+}
+
+.details-img-2{
+  background-image: url(../../assests/images/undraw_accept_request_vdsd.svg);
+}
+
+.details-img-3{
+  background-image: url(../../assests/images/undraw_done_a34v.svg);
+}
+
+.auth-nav-container{
+  width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-nav-container>ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 19%;
+  font-size: 15px;
+  padding: 0;
+  margin: 0 40px 0px 0px;
+}
+
+.auth-nav-container>ul>li{
+  height: 64px;
+  width: 71px;
+  display: flex;
+  transition: 0.5s ease;
+  justify-content: center;
+}
+
+.auth-nav-container>ul>li:hover{
+  border-bottom: 3px solid white;
+}
+.text-center{
+  text-align: center;
+}
+
+.footer-container{
+  background-color: #2f2e41;
+  color: #1890ff;
+}
+
+.github-icon{
+  font-size: 23px;
+    margin-top: 11px;
+    color: black;
+}
+
+
+@media all and (max-width: 990px){
+.auth-nav-container>ul{
+  width: 40%;
+}
+}
+
+@media all and (max-width: 550px){
+  .header-container{
+    padding: 0px 20px;
+  }
+
+  .auth-nav-container>ul{
+    width: 65%;
+    margin: 0;
+  }
+
+  .logo-name{
+    padding: 20px;
+    align-items: center;
+  }
+  .home-side-panel{
+    height: 27vh;
+  }
+
+  .create-acc-btn{
+    width: 75%;
+  }
+}
